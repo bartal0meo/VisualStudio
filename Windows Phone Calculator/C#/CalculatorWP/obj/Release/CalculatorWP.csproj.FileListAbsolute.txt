@@ -1,0 +1,38 @@
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Release\ApplicationIcon.png
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Release\Background.png
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Release\CalculatorWP.dll
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Release\CalculatorWP.pdb
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Release\AppManifest.xaml
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Release\CalculatorWP.xap
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Release\App.g.i.cs
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Release\MainPage.g.i.cs
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Release\CalculatorWP.g.resources
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Release\CalculatorWP.dll
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Release\CalculatorWP.pdb
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Release\XapCacheFile.xml
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\ApplicationIcon.png
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\Background.png
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\CalculatorWP.dll
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\CalculatorWP.pdb
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\AppManifest.xaml
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\CalculatorWP.xap
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\obj\Release\App.g.cs
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\obj\Release\MainPage.g.cs
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.g.resources
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.dll
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.pdb
+C:\Users\Adrian\Desktop\Windows Phone Calculator\C#\CalculatorWP\obj\Release\XapCacheFile.xml
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\ApplicationIcon.png
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\Background.png
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\CalculatorWP.dll
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\CalculatorWP.pdb
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\AppManifest.xaml
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\Bin\Release\CalculatorWP.xap
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.csprojResolveAssemblyReference.cache
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\obj\Release\App.g.i.cs
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\obj\Release\MainPage.g.i.cs
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.g.resources
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.dll
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\obj\Release\CalculatorWP.pdb
+C:\Users\Adrian\Desktop\PWSIiP 3 Rok VI Semestr\Windows Phone Calculator\C#\CalculatorWP\obj\Release\XapCacheFile.xml

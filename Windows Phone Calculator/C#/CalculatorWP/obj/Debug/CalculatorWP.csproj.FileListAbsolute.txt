@@ -1,0 +1,12 @@
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Debug\App.g.i.cs
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Debug\MainPage.g.i.cs
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Debug\CalculatorWP.g.resources
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Debug\ApplicationIcon.png
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Debug\Background.png
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Debug\CalculatorWP.dll
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Debug\CalculatorWP.pdb
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Debug\CalculatorWP.dll
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Debug\CalculatorWP.pdb
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Debug\AppManifest.xaml
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\Bin\Debug\CalculatorWP.xap
+c:\users\houssem\documents\visual studio 2010\Projects\CalculatorWP\CalculatorWP\obj\Debug\XapCacheFile.xml
