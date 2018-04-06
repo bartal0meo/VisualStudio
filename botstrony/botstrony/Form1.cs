@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,11 +28,9 @@ namespace botstrony
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+
+            if (CheckForInternetConnection() == true)
             {
-                using (var client = new System.Net.WebClient())
-                using (client.OpenRead("http://clients3.google.com/generate_204"))
-                {
                     if (mylomza_checkBox.Checked)
                     {
                         mylomza();
@@ -44,11 +43,10 @@ namespace botstrony
                     {
                         localhost();
                     }
-                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Brak połączenia z internetem", "Błąd");
+                MessageBox.Show("Błąd","Brak połączenia z internetem");
             }
 
         }
@@ -76,12 +74,18 @@ namespace botstrony
 
             //  webBrowser1.Document.GetElementById("form_nazwa").InnerText = name_textbox.Text;
 
-            // webBrowser.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
+           // webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
+            //webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
+            //webBrowser1.Document.GetElementById("description").SetAttribute("value", tresc_textbox.Text);
 
-
-              webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
-
-            //  webBrowser1.Document.GetElementById("description").InnerText = tresc_textbox.Text;
+            //HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("desciption");
+            //foreach (HtmlElement el in elc)
+            //{
+             //   if (el.GetAttribute("name").Equals("description"))
+              //  {
+               //     el.SetAttr("value", tresc_textbox.Text);
+               // }
+            //}
 
 
             // HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
@@ -125,10 +129,10 @@ namespace botstrony
             {
                 time_label.Text = "";
             }
-            else if (length > 160)
+            else if (length < 160)
             {
                 int remaind = 160 - length;
-                time_label.Text = "Pozostało znaków: " + length;
+                time_label.Text = "Pozostało znaków: " + remaind;
             }
             else
             {
@@ -159,5 +163,22 @@ namespace botstrony
                 webBrowser1.Navigate("");
             }
         }
+
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
