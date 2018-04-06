@@ -15,7 +15,7 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            webBrowser1.Navigate("http://mylomza.pl/ogloszenia/dodaj2.html");
         }
         WebBrowser webBrowser = new WebBrowser();
         public Form1()
@@ -60,14 +60,14 @@ namespace botstrony
         private void mylomza()
         {
 
-            // webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
+             //webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
 
             //  webBrowser1.Document.GetElementById("form_nazwa").InnerText = name_textbox.Text;
 
             // webBrowser.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
 
 
-            //  webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
+              webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
 
             //  webBrowser1.Document.GetElementById("description").InnerText = tresc_textbox.Text;
 
