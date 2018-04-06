@@ -27,18 +27,30 @@ namespace botstrony
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (mylomza_checkBox.Checked)
+            try
             {
-                mylomza();
+                using (var client = new System.Net.WebClient())
+                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                {
+                    if (mylomza_checkBox.Checked)
+                    {
+                        mylomza();
+                    }
+                    else if (fourlomza_checkBox.Checked)
+                    {
+                        fourlomza();
+                    }
+                    else if (checkBox_localhost.Checked)
+                    {
+                        localhost();
+                    }
+                }
             }
-            else if (fourlomza_checkBox.Checked)
+            catch
             {
-                fourlomza();
+                MessageBox.Show("Brak połączenia z internetem", "Błąd");
             }
-            else if (checkBox_localhost.Checked)
-            {
-                localhost();
-            }
+
         }
         private void localhost()
         {
