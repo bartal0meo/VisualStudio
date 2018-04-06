@@ -25,3 +25,6 @@ C:\Users\Bartosz\Desktop\Projekty_Github\C#\VisualStudio\botstrony\botstrony\obj
 C:\Users\Bartosz\Desktop\Projekty_Github\C#\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.Form1.resources
 C:\Users\Bartosz\Desktop\Projekty_Github\C#\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.Properties.Resources.resources
 C:\Users\Bartosz\Desktop\Projekty_Github\C#\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.csproj.GenerateResource.Cache
+C:\Users\Laptop\Documents\GitHub\Nowe\botstrony\botstrony\bin\Debug\botstrony.exe.config
+C:\Users\Laptop\Documents\GitHub\Nowe\botstrony\botstrony\obj\Debug\botstrony.exe
+C:\Users\Laptop\Documents\GitHub\Nowe\botstrony\botstrony\obj\Debug\botstrony.pdb

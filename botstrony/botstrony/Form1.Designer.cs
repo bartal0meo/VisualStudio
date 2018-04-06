@@ -130,6 +130,7 @@
             this.mylomza_checkBox.TabIndex = 9;
             this.mylomza_checkBox.Text = "mylomza.pl";
             this.mylomza_checkBox.UseVisualStyleBackColor = true;
+            this.mylomza_checkBox.CheckedChanged += new System.EventHandler(this.mylomza_checkBox_CheckedChanged);
             // 
             // fourlomza_checkBox
             // 
@@ -140,6 +141,7 @@
             this.fourlomza_checkBox.TabIndex = 10;
             this.fourlomza_checkBox.Text = "4lomza.pl";
             this.fourlomza_checkBox.UseVisualStyleBackColor = true;
+            this.fourlomza_checkBox.CheckedChanged += new System.EventHandler(this.fourlomza_checkBox_CheckedChanged);
             // 
             // timer1
             // 
