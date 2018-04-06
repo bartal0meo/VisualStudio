@@ -16,3 +16,12 @@ C:\Users\Bartosz\Desktop\botstrony\botstrony\obj\Debug\botstrony.csprojResolveAs
 C:\Users\Bartosz\Desktop\botstrony\botstrony\obj\Debug\botstrony.Form1.resources
 C:\Users\Bartosz\Desktop\botstrony\botstrony\obj\Debug\botstrony.Properties.Resources.resources
 C:\Users\Bartosz\Desktop\botstrony\botstrony\obj\Debug\botstrony.csproj.GenerateResource.Cache
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\bin\Debug\botstrony.exe.config
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.exe
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.pdb
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\bin\Debug\botstrony.exe
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\bin\Debug\botstrony.pdb
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.csprojResolveAssemblyReference.cache
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.Form1.resources
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.Properties.Resources.resources
+C:\Users\Laptop\Documents\GitHub\VisualStudio\botstrony\botstrony\obj\Debug\botstrony.csproj.GenerateResource.Cache
