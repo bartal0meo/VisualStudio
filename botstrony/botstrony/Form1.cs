@@ -16,9 +16,11 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowser1.Navigate("http://mylomza.pl/ogloszenia/dodaj2.html");
+
         }
         WebBrowser webBrowser = new WebBrowser();
+        private HtmlElementCollection tds;
+
         public Form1()
         {
             InitializeComponent();
@@ -70,34 +72,39 @@ namespace botstrony
         private void mylomza()
         {
 
-             //webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
+            //webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
 
             //  webBrowser1.Document.GetElementById("form_nazwa").InnerText = name_textbox.Text;
 
-           // webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
-            //webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
+          //webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
+            webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
             //webBrowser1.Document.GetElementById("description").SetAttribute("value", tresc_textbox.Text);
 
-            //HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("desciption");
-            //foreach (HtmlElement el in elc)
-            //{
-             //   if (el.GetAttribute("name").Equals("description"))
-              //  {
-               //     el.SetAttr("value", tresc_textbox.Text);
-               // }
-            //}
 
-
-            // HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-            // foreach (HtmlElement el in elc)
-            // {
-            //    if (el.GetAttribute("type").Equals("submit"))
-            //    {
-            //        el.InvokeMember("click");
-            //    }
-            // }
-
-
+            HtmlDocument document = webBrowser1.Document;
+            if (document != null)
+            {
+                HtmlElementCollection tableCollection = document.GetElementsByTagName("tbody");
+                foreach (HtmlElement table in tableCollection)
+                {
+                    HtmlElementCollection trColl = table.GetElementsByTagName("tr");
+                    for (int i = 0; i > trColl.Count; i++)
+                    {
+                        foreach (HtmlElement row in trColl)
+                        {
+                            HtmlElementCollection textarea = row.GetElementsByTagName("td");
+                            foreach (HtmlElement text in textarea)
+                            {
+                                tds = text.GetElementsByTagName("textarea");
+                                if (tds != null && tds.Count > 1)
+                                {
+                                    tds[0].SetAttribute("value", tresc_textbox.Text);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void fourlomza()
