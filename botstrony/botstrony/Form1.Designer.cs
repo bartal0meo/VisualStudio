@@ -42,7 +42,6 @@
             this.fourlomza_checkBox = new System.Windows.Forms.CheckBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.time_label = new System.Windows.Forms.Label();
-            this.checkBox_localhost = new System.Windows.Forms.CheckBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
@@ -155,16 +154,6 @@
             this.time_label.Size = new System.Drawing.Size(0, 13);
             this.time_label.TabIndex = 11;
             // 
-            // checkBox_localhost
-            // 
-            this.checkBox_localhost.AutoSize = true;
-            this.checkBox_localhost.Location = new System.Drawing.Point(12, 193);
-            this.checkBox_localhost.Name = "checkBox_localhost";
-            this.checkBox_localhost.Size = new System.Drawing.Size(68, 17);
-            this.checkBox_localhost.TabIndex = 12;
-            this.checkBox_localhost.Text = "localhost";
-            this.checkBox_localhost.UseVisualStyleBackColor = true;
-            // 
             // webBrowser1
             // 
             this.webBrowser1.Location = new System.Drawing.Point(552, 33);
@@ -180,7 +169,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 457);
             this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.checkBox_localhost);
             this.Controls.Add(this.time_label);
             this.Controls.Add(this.fourlomza_checkBox);
             this.Controls.Add(this.mylomza_checkBox);
@@ -216,7 +204,6 @@
         private System.Windows.Forms.CheckBox fourlomza_checkBox;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label time_label;
-        private System.Windows.Forms.CheckBox checkBox_localhost;
         private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

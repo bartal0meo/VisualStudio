@@ -18,8 +18,6 @@ namespace botstrony
         {
 
         }
-        WebBrowser webBrowser = new WebBrowser();
-        private HtmlElementCollection tds;
 
         public Form1()
         {
@@ -41,10 +39,6 @@ namespace botstrony
                     {
                         fourlomza();
                     }
-                    else if (checkBox_localhost.Checked)
-                    {
-                        localhost();
-                    }
             }
             else
             {
@@ -52,57 +46,27 @@ namespace botstrony
             }
 
         }
-        private void localhost()
-        {
-            webBrowser.Navigate("http://localhost/bot/rejestracja.php");
-            // var f_name = webBrowser.Document.GetElementsByTagName("text")["nick"].GetAttribute("value");
-            webBrowser.Document.GetElementsByTagName("text")["nick"].SetAttribute("input", name_textbox.Text);
-            //var f_name1 = webBrowser.Document.GetElementsByTagName("text")["nick"].GetAttribute("value");
-            webBrowser.Document.GetElementsByTagName("text")["email"].SetAttribute("input", name_textbox.Text);
-            //var f_name2 = webBrowser.Document.GetElementsByTagName("text")["nick"].GetAttribute("value");
-            webBrowser.Document.GetElementsByTagName("text")["tel"].SetAttribute("input", name_textbox.Text);
-            //var f_name3 = webBrowser.Document.GetElementsByTagName("text")["nick"].GetAttribute("value");
-            webBrowser.Document.GetElementsByTagName("text")["kat"].SetAttribute("input", name_textbox.Text);
-            //  var f_name4 = webBrowser.Document.GetElementsByTagName("text")["nick"].GetAttribute("value");
-            webBrowser.Document.GetElementsByTagName("text")["tresc"].SetAttribute("input", name_textbox.Text);
 
-            webBrowser.Document.GetElementById("submit").InvokeMember("click");
-
-        }
         private void mylomza()
         {
-
-            //webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
-
-            //  webBrowser1.Document.GetElementById("form_nazwa").InnerText = name_textbox.Text;
-
-          //webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
+            webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
             webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
-            //webBrowser1.Document.GetElementById("description").SetAttribute("value", tresc_textbox.Text);
 
-
-            HtmlDocument document = webBrowser1.Document;
-            if (document != null)
+            HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("textarea");
+            foreach (HtmlElement el in elc)
             {
-                HtmlElementCollection tableCollection = document.GetElementsByTagName("tbody");
-                foreach (HtmlElement table in tableCollection)
+                if (el.GetAttribute("name").Equals("description"))
                 {
-                    HtmlElementCollection trColl = table.GetElementsByTagName("tr");
-                    for (int i = 0; i > trColl.Count; i++)
-                    {
-                        foreach (HtmlElement row in trColl)
-                        {
-                            HtmlElementCollection textarea = row.GetElementsByTagName("td");
-                            foreach (HtmlElement text in textarea)
-                            {
-                                tds = text.GetElementsByTagName("textarea");
-                                if (tds != null && tds.Count > 1)
-                                {
-                                    tds[0].SetAttribute("value", tresc_textbox.Text);
-                                }
-                            }
-                        }
-                    }
+                    el.SetAttribute("value", tresc_textbox.Text);
+                }
+            }
+
+            HtmlElementCollection wcisk = this.webBrowser1.Document.GetElementsByTagName("button");
+            foreach (HtmlElement el in wcisk)
+            {
+               if (el.GetAttribute("type").Equals("button"))
+                {
+                    el.InvokeMember("click");
                 }
             }
         }
