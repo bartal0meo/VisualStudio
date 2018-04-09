@@ -16,7 +16,17 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            webBrowser1.Navigate("http://www.kaliszak.pl/dodaj-ogloszenie/formularz");
+          HtmlElementCollection eldo = this.webBrowser1.Document.GetElementsByTagName("ul");
+                foreach (HtmlElement eldoka in eldo)
+                {
+                    if (eldoka.GetAttribute("href").Equals("/dodaj-ogloszenie/kategoria?category_id=3"))
+                    {
+                    string link = eldoka.GetAttribute("onClick");
+                    MessageBox.Show(link);
+                        eldoka.InvokeMember("click", null);
+                    }
+                }
         }
 
         public Form1()
@@ -39,6 +49,10 @@ namespace botstrony
                     {
                         fourlomza();
                     }
+                    else if (kaliszak_checkbox.Checked)
+                {
+                    kaliszak();
+                }
             }
             else
             {
@@ -92,6 +106,21 @@ namespace botstrony
 
         }
 
+        private void kaliszak()
+        {
+            webBrowser1.Navigate("http://www.kaliszak.pl/dodaj-ogloszenie/formularz");
+            webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
+            webBrowser1.Document.GetElementById("field-row-announcement_description").SetAttribute("value", tresc_textbox.Text);
+            webBrowser1.Document.GetElementById("field-row-announcement_phone_number").SetAttribute("value", phone_textbox.Text);
+            webBrowser1.Document.GetElementById("field-row-announcement_email").SetAttribute("value", email_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", "Poznań");
+            webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
+
+            webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
+            webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
+
+
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             int length = tresc_textbox.TextLength;

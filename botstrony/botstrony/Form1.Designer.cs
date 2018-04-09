@@ -43,6 +43,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.time_label = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.kaliszak_checkbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tresc_textbox
@@ -163,11 +164,22 @@
             this.webBrowser1.Size = new System.Drawing.Size(787, 408);
             this.webBrowser1.TabIndex = 13;
             // 
+            // kaliszak_checkbox
+            // 
+            this.kaliszak_checkbox.AutoSize = true;
+            this.kaliszak_checkbox.Location = new System.Drawing.Point(12, 193);
+            this.kaliszak_checkbox.Name = "kaliszak_checkbox";
+            this.kaliszak_checkbox.Size = new System.Drawing.Size(75, 17);
+            this.kaliszak_checkbox.TabIndex = 14;
+            this.kaliszak_checkbox.Text = "kaliszak.pl";
+            this.kaliszak_checkbox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 457);
+            this.Controls.Add(this.kaliszak_checkbox);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.time_label);
             this.Controls.Add(this.fourlomza_checkBox);
@@ -205,6 +217,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label time_label;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.CheckBox kaliszak_checkbox;
     }
 }
 
