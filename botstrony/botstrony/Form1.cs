@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,9 +16,11 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowser1.Navigate("http://mylomza.pl/ogloszenia/dodaj2.html");
+
         }
         WebBrowser webBrowser = new WebBrowser();
+        private HtmlElementCollection tds;
+
         public Form1()
         {
             InitializeComponent();
@@ -27,18 +30,27 @@ namespace botstrony
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (mylomza_checkBox.Checked)
+
+            if (CheckForInternetConnection() == true)
             {
-                mylomza();
+                    if (mylomza_checkBox.Checked)
+                    {
+                        mylomza();
+                    }
+                    else if (fourlomza_checkBox.Checked)
+                    {
+                        fourlomza();
+                    }
+                    else if (checkBox_localhost.Checked)
+                    {
+                        localhost();
+                    }
             }
-            else if (fourlomza_checkBox.Checked)
+            else
             {
-                fourlomza();
+                MessageBox.Show("Błąd","Brak połączenia z internetem");
             }
-            else if (checkBox_localhost.Checked)
-            {
-                localhost();
-            }
+
         }
         private void localhost()
         {
@@ -60,28 +72,39 @@ namespace botstrony
         private void mylomza()
         {
 
-             //webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
+            //webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
 
             //  webBrowser1.Document.GetElementById("form_nazwa").InnerText = name_textbox.Text;
 
-            // webBrowser.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
+          //webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
+            webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
+            //webBrowser1.Document.GetElementById("description").SetAttribute("value", tresc_textbox.Text);
 
 
-              webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
-
-            //  webBrowser1.Document.GetElementById("description").InnerText = tresc_textbox.Text;
-
-
-            // HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-            // foreach (HtmlElement el in elc)
-            // {
-            //    if (el.GetAttribute("type").Equals("submit"))
-            //    {
-            //        el.InvokeMember("click");
-            //    }
-            // }
-
-
+            HtmlDocument document = webBrowser1.Document;
+            if (document != null)
+            {
+                HtmlElementCollection tableCollection = document.GetElementsByTagName("tbody");
+                foreach (HtmlElement table in tableCollection)
+                {
+                    HtmlElementCollection trColl = table.GetElementsByTagName("tr");
+                    for (int i = 0; i > trColl.Count; i++)
+                    {
+                        foreach (HtmlElement row in trColl)
+                        {
+                            HtmlElementCollection textarea = row.GetElementsByTagName("td");
+                            foreach (HtmlElement text in textarea)
+                            {
+                                tds = text.GetElementsByTagName("textarea");
+                                if (tds != null && tds.Count > 1)
+                                {
+                                    tds[0].SetAttribute("value", tresc_textbox.Text);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void fourlomza()
@@ -113,10 +136,10 @@ namespace botstrony
             {
                 time_label.Text = "";
             }
-            else if (length > 160)
+            else if (length < 160)
             {
                 int remaind = 160 - length;
-                time_label.Text = "Pozostało znaków: " + length;
+                time_label.Text = "Pozostało znaków: " + remaind;
             }
             else
             {
@@ -147,5 +170,22 @@ namespace botstrony
                 webBrowser1.Navigate("");
             }
         }
+
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
