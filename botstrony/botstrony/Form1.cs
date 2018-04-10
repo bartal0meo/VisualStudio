@@ -111,17 +111,26 @@ namespace botstrony
                 }
 
             }
-            await PageLoad(3);
 
+            await PageLoad(3);
+            
             webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", "Poznań");
             webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
-
             webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
-            webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
+            //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
+
+            HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+            foreach (HtmlElement el in elc)
+            {
+                if (el.GetAttribute("type").Equals("submit"))
+                {
+                    el.InvokeMember("click");
+                }
+            }
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -194,7 +203,7 @@ namespace botstrony
             //
             while (PageLoaded.Task.Status != TaskStatus.RanToCompletion)
             {
-                await Task.Delay(10);//interval of 10 ms worked good for me
+                await Task.Delay(10);//10 ms interval
                 TimeElapsed++;
                 if (TimeElapsed >= TimeOut * 100) PageLoaded.TrySetResult(true);
             }
