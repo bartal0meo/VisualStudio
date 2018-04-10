@@ -52,11 +52,7 @@ namespace botstrony
                     {
                         gdyniak();
                     }
-                    else if (jumla_checkBox.Checked)
-                    {
-                        jumla();
-                    }
-
+                    //jumla tez odpada bo obrazek
                     //epracazagranica.pl - trzeba sie zastanowic nad tym
             }
             else
@@ -213,52 +209,6 @@ namespace botstrony
                     el.InvokeMember("click");
                 }
             } 
-        }
-
-        private void jumla()
-        {
-            //this.webBrowser1.Navigate("http://www.jumla.pl/dodaj-ogloszenie.html");
-
-            HtmlElementCollection ele = this.webBrowser1.Document.GetElementsByTagName("select");
-            foreach (HtmlElement el in ele)
-            {
-                if (el.GetAttribute("name").Equals("cat"))
-                {
-                    el.SetAttribute("value", "4_32");
-                }
-
-                if (el.GetAttribute("name").Equals("okres"))
-                {
-                    el.SetAttribute("value", "13");
-                }
-            }
-
-            HtmlElementCollection elem = this.webBrowser1.Document.GetElementsByTagName("textarea");
-            foreach (HtmlElement elm in elem)
-            {
-                if (elm.GetAttribute("name").Equals("tresc"))
-                {
-                    elm.SetAttribute("value", tresc_textbox.Text);
-                }
-            }
-
-            HtmlElementCollection eld = this.webBrowser1.Document.GetElementsByTagName("input");
-            foreach (HtmlElement ela in eld)
-            {
-                if (ela.GetAttribute("name").Equals("imie"))
-                {
-                    ela.SetAttribute("value", name_textbox.Text);
-                }
-
-                if (ela.GetAttribute("name").Equals("imie"))
-                {
-                    ela.SetAttribute("value", name_textbox.Text);
-                }
-            }
-
-            webBrowser1.Document.GetElementById("tytul").SetAttribute("value", name_textbox.Text);
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
