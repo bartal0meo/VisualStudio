@@ -17,7 +17,7 @@ namespace botstrony
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.webBrowser1.Navigate("http://www.kaliszak.pl/dodaj-ogloszenie/formularz");
+            this.webBrowser1.Navigate("http://www.jumla.pl/dodaj-ogloszenie.html");
         }
 
         public Form1()
@@ -40,10 +40,24 @@ namespace botstrony
                     {
                         fourlomza();
                     }
-                    else if (kaliszak_checkbox.Checked)
-                {
-                    this.kaliszak();
-                }
+                    else if (kaliszak_checkBox.Checked)
+                    {
+                        kaliszak();
+                    }
+                    else if (krakusik_checkBox.Checked)
+                    {
+                        krakusik();
+                    }
+                    else if (gdyniak_checkBox.Checked)
+                    {
+                        gdyniak();
+                    }
+                    else if (jumla_checkBox.Checked)
+                    {
+                        jumla();
+                    }
+
+                    //epracazagranica.pl - trzeba sie zastanowic nad tym
             }
             else
             {
@@ -118,7 +132,7 @@ namespace botstrony
             webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
-            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", "Poznań");
+            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", place_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
             webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
             //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
@@ -132,6 +146,121 @@ namespace botstrony
                 }
             }
         }
+
+        private async void krakusik()
+        {
+            //webBrowser1.Navigate("http://www.krakusik.pl/dodaj-ogloszenie/formularz");
+
+            HtmlElementCollection ele = webBrowser1.Document.All;
+            foreach (HtmlElement el in ele)
+            {
+                if (el.InnerText == "Praca za granicą")
+                {
+                    el.InvokeMember("onClick");
+                }
+
+            }
+            
+            await PageLoad(3);
+
+            webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
+
+            HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+            foreach (HtmlElement el in elc)
+            {
+                if (el.GetAttribute("type").Equals("submit"))
+                {
+                    el.InvokeMember("click");
+                }
+            }
+            
+        }
+
+        private async void gdyniak()
+        {
+            webBrowser1.Navigate("http://www.gdyniak.pl/dodaj-ogloszenie/formularz");
+
+            HtmlElementCollection ele = webBrowser1.Document.All;
+            foreach (HtmlElement el in ele)
+            {
+                if (el.InnerText == "Dam pracę")
+                {
+                    el.InvokeMember("onClick");
+                }
+
+            }
+            
+            await PageLoad(3);
+
+            webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", place_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
+            webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
+            //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
+
+            HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+            foreach (HtmlElement el in elc)
+            {
+                if (el.GetAttribute("type").Equals("submit"))
+                {
+                    el.InvokeMember("click");
+                }
+            } 
+        }
+
+        private void jumla()
+        {
+            //this.webBrowser1.Navigate("http://www.jumla.pl/dodaj-ogloszenie.html");
+
+            HtmlElementCollection ele = this.webBrowser1.Document.GetElementsByTagName("select");
+            foreach (HtmlElement el in ele)
+            {
+                if (el.GetAttribute("name").Equals("cat"))
+                {
+                    el.SetAttribute("value", "4_32");
+                }
+
+                if (el.GetAttribute("name").Equals("okres"))
+                {
+                    el.SetAttribute("value", "13");
+                }
+            }
+
+            HtmlElementCollection elem = this.webBrowser1.Document.GetElementsByTagName("textarea");
+            foreach (HtmlElement elm in elem)
+            {
+                if (elm.GetAttribute("name").Equals("tresc"))
+                {
+                    elm.SetAttribute("value", tresc_textbox.Text);
+                }
+            }
+
+            HtmlElementCollection eld = this.webBrowser1.Document.GetElementsByTagName("input");
+            foreach (HtmlElement ela in eld)
+            {
+                if (ela.GetAttribute("name").Equals("imie"))
+                {
+                    ela.SetAttribute("value", name_textbox.Text);
+                }
+
+                if (ela.GetAttribute("name").Equals("imie"))
+                {
+                    ela.SetAttribute("value", name_textbox.Text);
+                }
+            }
+
+            webBrowser1.Document.GetElementById("tytul").SetAttribute("value", name_textbox.Text);
+
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             int length = tresc_textbox.TextLength;

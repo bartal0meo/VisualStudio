@@ -43,7 +43,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.time_label = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.kaliszak_checkbox = new System.Windows.Forms.CheckBox();
+            this.kaliszak_checkBox = new System.Windows.Forms.CheckBox();
+            this.krakusik_checkBox = new System.Windows.Forms.CheckBox();
+            this.place_textbox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.gdyniak_checkBox = new System.Windows.Forms.CheckBox();
+            this.jumla_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tresc_textbox
@@ -164,22 +169,73 @@
             this.webBrowser1.Size = new System.Drawing.Size(787, 408);
             this.webBrowser1.TabIndex = 13;
             // 
-            // kaliszak_checkbox
+            // kaliszak_checkBox
             // 
-            this.kaliszak_checkbox.AutoSize = true;
-            this.kaliszak_checkbox.Location = new System.Drawing.Point(12, 193);
-            this.kaliszak_checkbox.Name = "kaliszak_checkbox";
-            this.kaliszak_checkbox.Size = new System.Drawing.Size(75, 17);
-            this.kaliszak_checkbox.TabIndex = 14;
-            this.kaliszak_checkbox.Text = "kaliszak.pl";
-            this.kaliszak_checkbox.UseVisualStyleBackColor = true;
+            this.kaliszak_checkBox.AutoSize = true;
+            this.kaliszak_checkBox.Location = new System.Drawing.Point(12, 193);
+            this.kaliszak_checkBox.Name = "kaliszak_checkBox";
+            this.kaliszak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.kaliszak_checkBox.TabIndex = 14;
+            this.kaliszak_checkBox.Text = "kaliszak.pl";
+            this.kaliszak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // krakusik_checkBox
+            // 
+            this.krakusik_checkBox.AutoSize = true;
+            this.krakusik_checkBox.Location = new System.Drawing.Point(12, 216);
+            this.krakusik_checkBox.Name = "krakusik_checkBox";
+            this.krakusik_checkBox.Size = new System.Drawing.Size(77, 17);
+            this.krakusik_checkBox.TabIndex = 15;
+            this.krakusik_checkBox.Text = "krakusik.pl";
+            this.krakusik_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // place_textbox
+            // 
+            this.place_textbox.Location = new System.Drawing.Point(12, 421);
+            this.place_textbox.Name = "place_textbox";
+            this.place_textbox.Size = new System.Drawing.Size(139, 20);
+            this.place_textbox.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 405);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Miejscowość";
+            // 
+            // gdyniak_checkBox
+            // 
+            this.gdyniak_checkBox.AutoSize = true;
+            this.gdyniak_checkBox.Location = new System.Drawing.Point(10, 239);
+            this.gdyniak_checkBox.Name = "gdyniak_checkBox";
+            this.gdyniak_checkBox.Size = new System.Drawing.Size(74, 17);
+            this.gdyniak_checkBox.TabIndex = 18;
+            this.gdyniak_checkBox.Text = "gdyniak.pl";
+            this.gdyniak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // jumla_checkBox
+            // 
+            this.jumla_checkBox.AutoSize = true;
+            this.jumla_checkBox.Location = new System.Drawing.Point(10, 262);
+            this.jumla_checkBox.Name = "jumla_checkBox";
+            this.jumla_checkBox.Size = new System.Drawing.Size(61, 17);
+            this.jumla_checkBox.TabIndex = 19;
+            this.jumla_checkBox.Text = "jumla.pl";
+            this.jumla_checkBox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 457);
-            this.Controls.Add(this.kaliszak_checkbox);
+            this.Controls.Add(this.jumla_checkBox);
+            this.Controls.Add(this.gdyniak_checkBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.place_textbox);
+            this.Controls.Add(this.krakusik_checkBox);
+            this.Controls.Add(this.kaliszak_checkBox);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.time_label);
             this.Controls.Add(this.fourlomza_checkBox);
@@ -217,7 +273,12 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label time_label;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.CheckBox kaliszak_checkbox;
+        private System.Windows.Forms.CheckBox kaliszak_checkBox;
+        private System.Windows.Forms.CheckBox krakusik_checkBox;
+        private System.Windows.Forms.TextBox place_textbox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox gdyniak_checkBox;
+        private System.Windows.Forms.CheckBox jumla_checkBox;
     }
 }
 
