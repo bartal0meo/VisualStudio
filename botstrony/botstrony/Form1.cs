@@ -17,7 +17,7 @@ namespace botstrony
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.webBrowser1.Navigate("http://www.jumla.pl/dodaj-ogloszenie.html");
+            this.webBrowser1.Navigate("https://bazaro.com.pl/?view=post&catid=5&subcatid=49");
         }
 
         public Form1()
@@ -51,6 +51,10 @@ namespace botstrony
                     else if (gdyniak_checkBox.Checked)
                     {
                         gdyniak();
+                    }
+                    else if (bazaro_checkBox.Checked)
+                    {
+                        bazaro();
                     }
                     //jumla tez odpada bo obrazek
                     //epracazagranica.pl - trzeba sie zastanowic nad tym
@@ -106,6 +110,44 @@ namespace botstrony
                 }
             }
 
+        }
+
+        private void bazaro()
+        {
+            //webBrowser1.Navigate("https://bazaro.com.pl/?view=post&catid=5&subcatid=49");
+
+            HtmlElementCollection ele = webBrowser1.Document.GetElementsByTagName("select");
+            foreach (HtmlElement el in ele)
+            {
+                if (el.GetAttribute("name").Equals("district"))
+                {
+                    el.SetAttribute("value", "15");
+                }
+            }
+            
+            webBrowser1.Document.GetElementById("email").SetAttribute("value", email_textbox.Text);
+            webBrowser1.Document.GetElementById("adtitle").SetAttribute("value", name_textbox.Text);
+            webBrowser1.Document.GetElementById("addesc").SetAttribute("value", tresc_textbox.Text);
+            webBrowser1.Document.GetElementById("price").SetAttribute("value", "123");
+            webBrowser1.Document.GetElementById("x[1]").SetAttribute("value", phone_textbox.Text);
+
+            HtmlElementCollection elem = webBrowser1.Document.GetElementsByTagName("input");
+            foreach (HtmlElement eles in elem)
+            {
+                if (eles.GetAttribute("name").Equals("agree"))
+                {
+                    eles.InvokeMember("click");
+                }
+            }
+           
+            HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("button");
+            foreach (HtmlElement elems in element)
+            {
+                if (elems.GetAttribute("class").Equals("btn btn-default btn-sm"))
+                {
+                    elems.InvokeMember("click");
+                }
+            }  
         }
 
         private async void kaliszak()

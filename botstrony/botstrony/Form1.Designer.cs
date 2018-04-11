@@ -48,7 +48,7 @@
             this.place_textbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gdyniak_checkBox = new System.Windows.Forms.CheckBox();
-            this.jumla_checkBox = new System.Windows.Forms.CheckBox();
+            this.bazaro_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tresc_textbox
@@ -215,22 +215,22 @@
             this.gdyniak_checkBox.Text = "gdyniak.pl";
             this.gdyniak_checkBox.UseVisualStyleBackColor = true;
             // 
-            // jumla_checkBox
+            // bazaro_checkBox
             // 
-            this.jumla_checkBox.AutoSize = true;
-            this.jumla_checkBox.Location = new System.Drawing.Point(10, 262);
-            this.jumla_checkBox.Name = "jumla_checkBox";
-            this.jumla_checkBox.Size = new System.Drawing.Size(61, 17);
-            this.jumla_checkBox.TabIndex = 19;
-            this.jumla_checkBox.Text = "jumla.pl";
-            this.jumla_checkBox.UseVisualStyleBackColor = true;
+            this.bazaro_checkBox.AutoSize = true;
+            this.bazaro_checkBox.Location = new System.Drawing.Point(10, 262);
+            this.bazaro_checkBox.Name = "bazaro_checkBox";
+            this.bazaro_checkBox.Size = new System.Drawing.Size(92, 17);
+            this.bazaro_checkBox.TabIndex = 19;
+            this.bazaro_checkBox.Text = "bazaro.com.pl";
+            this.bazaro_checkBox.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 457);
-            this.Controls.Add(this.jumla_checkBox);
+            this.Controls.Add(this.bazaro_checkBox);
             this.Controls.Add(this.gdyniak_checkBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.place_textbox);
@@ -278,7 +278,7 @@
         private System.Windows.Forms.TextBox place_textbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox gdyniak_checkBox;
-        private System.Windows.Forms.CheckBox jumla_checkBox;
+        private System.Windows.Forms.CheckBox bazaro_checkBox;
     }
 }
 
