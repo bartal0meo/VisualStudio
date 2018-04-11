@@ -30,7 +30,7 @@ namespace botstrony
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (CheckForInternetConnection() == true)
+            if (CheckForInternetConnection() == true && CheckForText() == true)
             {
                     if (mylomza_checkBox.Checked)
                     {
@@ -59,7 +59,7 @@ namespace botstrony
                     //jumla tez odpada bo obrazek
                     //epracazagranica.pl - trzeba sie zastanowic nad tym
             }
-            else
+            else if (CheckForInternetConnection() == false)
             {
                 MessageBox.Show("Błąd","Brak połączenia z internetem");
             }
@@ -311,6 +311,29 @@ namespace botstrony
                 return false;
             }
         }
+
+        public static bool CheckForText() 
+        {
+            try
+            {
+                foreach (Control c in this.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        TextBox textBox = c as TextBox;
+                        if (textBox.Text != string.Empty)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private async Task PageLoad(int TimeOut)
         {
             TaskCompletionSource<bool> PageLoaded = null;
