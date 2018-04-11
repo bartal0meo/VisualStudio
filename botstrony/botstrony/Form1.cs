@@ -122,7 +122,7 @@ namespace botstrony
 
             }
 
-            await PageLoad(3);
+            await PageLoad(5);
             
             webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -157,7 +157,7 @@ namespace botstrony
 
             }
             
-            await PageLoad(3);
+            await PageLoad(5);
 
             webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -190,7 +190,7 @@ namespace botstrony
 
             }
             
-            await PageLoad(3);
+            await PageLoad(5);
 
             webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
