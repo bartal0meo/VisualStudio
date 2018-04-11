@@ -14,10 +14,10 @@ namespace botstrony
 
     public partial class Form1 : Form
     {
-
         private void Form1_Load(object sender, EventArgs e)
         {
             this.webBrowser1.Navigate("https://bazaro.com.pl/?view=post&catid=5&subcatid=49");
+
         }
 
         public Form1()
@@ -29,8 +29,7 @@ namespace botstrony
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (CheckForInternetConnection() == true && CheckForText() == true)
+            if (CheckForInternetConnection() == true && CheckForText() == 0)
             {
                     if (mylomza_checkBox.Checked)
                     {
@@ -61,9 +60,13 @@ namespace botstrony
             }
             else if (CheckForInternetConnection() == false)
             {
-                MessageBox.Show("Błąd","Brak połączenia z internetem");
+                MessageBox.Show("Brak połączenia z internetem", "Błąd");
             }
-
+            else if (CheckForText() > 0)
+            {
+                int count = CheckForText();
+                MessageBox.Show( "Uzupełnij brakujące pola. Pozostało: " + count, "Puste pole");
+            }
         }
 
         private void mylomza()
@@ -312,26 +315,27 @@ namespace botstrony
             }
         }
 
-        public static bool CheckForText() 
+        private int CheckForText(int count = 0) 
         {
-            try
+            foreach (Control c in this.Controls)
             {
-                foreach (Control c in this.Controls)
+
+                if (c is TextBox)
                 {
-                    if (c is TextBox)
+                    TextBox textBox = c as TextBox;
+                    if (textBox.Text == string.Empty)
                     {
-                        TextBox textBox = c as TextBox;
-                        if (textBox.Text != string.Empty)
-                        {
-                            return true;
-                        }
+                        count++;
                     }
                 }
             }
-            catch
+
+            if (tresc_textbox.Text == string.Empty)
             {
-                return false;
+                count++;
             }
+
+            return count;
         }
 
         private async Task PageLoad(int TimeOut)
