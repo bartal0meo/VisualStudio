@@ -52,6 +52,7 @@
             this.workstation_textBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.najpewniej_checkBox = new System.Windows.Forms.CheckBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // tresc_textbox
@@ -138,7 +139,6 @@
             this.mylomza_checkBox.TabIndex = 9;
             this.mylomza_checkBox.Text = "mylomza.pl";
             this.mylomza_checkBox.UseVisualStyleBackColor = true;
-            this.mylomza_checkBox.CheckedChanged += new System.EventHandler(this.mylomza_checkBox_CheckedChanged);
             // 
             // fourlomza_checkBox
             // 
@@ -149,7 +149,6 @@
             this.fourlomza_checkBox.TabIndex = 10;
             this.fourlomza_checkBox.Text = "4lomza.pl";
             this.fourlomza_checkBox.UseVisualStyleBackColor = true;
-            this.fourlomza_checkBox.CheckedChanged += new System.EventHandler(this.fourlomza_checkBox_CheckedChanged);
             // 
             // timer1
             // 
@@ -254,11 +253,19 @@
             this.najpewniej_checkBox.Text = "najpewniej.pl";
             this.najpewniej_checkBox.UseVisualStyleBackColor = true;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(28, 118);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(109, 23);
+            this.progressBar1.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 457);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.najpewniej_checkBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.workstation_textBox);
@@ -314,6 +321,7 @@
         private System.Windows.Forms.TextBox workstation_textBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox najpewniej_checkBox;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
