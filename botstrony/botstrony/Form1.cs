@@ -16,8 +16,7 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.webBrowser1.Navigate("https://bazaro.com.pl/?view=post&catid=5&subcatid=49");
-
+            webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
         }
 
         public Form1()
@@ -54,6 +53,10 @@ namespace botstrony
                     else if (bazaro_checkBox.Checked)
                     {
                         bazaro();
+                    }
+                    else if (najpewniej_checkBox.Checked)
+                    {
+                        najpewniej();
                     }
                     //jumla tez odpada bo obrazek
                     //epracazagranica.pl - trzeba sie zastanowic nad tym
@@ -173,7 +176,7 @@ namespace botstrony
             webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
-            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", place_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", city_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
             webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
             //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
@@ -241,7 +244,7 @@ namespace botstrony
             webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
-            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", place_textbox.Text);
+            webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", city_textbox.Text);
             webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
             webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
             //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
@@ -254,6 +257,59 @@ namespace botstrony
                     el.InvokeMember("click");
                 }
             } 
+        }
+
+        private async void najpewniej()
+        {
+            //webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
+            await PageLoad(5);
+
+            HtmlElementCollection el = webBrowser1.Document.GetElementsByTagName("input");
+            foreach (HtmlElement ele in el)
+            {
+                if (ele.GetAttribute("name").Equals("tytul"))
+                {
+                    ele.SetAttribute("value", workstation_textBox.Text);
+                }
+
+                if (ele.GetAttribute("name").Equals("miasto"))
+                {
+                    ele.SetAttribute("value", city_textbox.Text);
+                }
+
+                if (ele.GetAttribute("name").Equals("telk"))
+                {
+                    ele.SetAttribute("value", phone_textbox.Text);
+                }
+
+                if (ele.GetAttribute("name").Equals("email"))
+                {
+                    ele.SetAttribute("value", email_textbox.Text);
+                }
+                /*
+                if (ele.GetAttribute("name").Equals("dodaj"))
+                {
+                    ele.InvokeMember("click");
+                } */
+            }
+
+            HtmlElementCollection elm = webBrowser1.Document.GetElementsByTagName("select");
+            foreach (HtmlElement elem in elm)
+            {
+                if (elem.GetAttribute("name").Equals("wojewodztwo"))
+                {
+                    elem.SetAttribute("value", "18");
+                }
+            }
+
+            HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("textarea");
+            foreach (HtmlElement elems in element)
+            {
+                if (elems.GetAttribute("name").Equals("tresc"))
+                {
+                    elems.SetAttribute("value", tresc_textbox.Text);
+                }
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -45,10 +45,13 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.kaliszak_checkBox = new System.Windows.Forms.CheckBox();
             this.krakusik_checkBox = new System.Windows.Forms.CheckBox();
-            this.place_textbox = new System.Windows.Forms.TextBox();
+            this.city_textbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gdyniak_checkBox = new System.Windows.Forms.CheckBox();
             this.bazaro_checkBox = new System.Windows.Forms.CheckBox();
+            this.workstation_textBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.najpewniej_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tresc_textbox
@@ -189,12 +192,12 @@
             this.krakusik_checkBox.Text = "krakusik.pl";
             this.krakusik_checkBox.UseVisualStyleBackColor = true;
             // 
-            // place_textbox
+            // city_textbox
             // 
-            this.place_textbox.Location = new System.Drawing.Point(12, 421);
-            this.place_textbox.Name = "place_textbox";
-            this.place_textbox.Size = new System.Drawing.Size(139, 20);
-            this.place_textbox.TabIndex = 16;
+            this.city_textbox.Location = new System.Drawing.Point(12, 421);
+            this.city_textbox.Name = "city_textbox";
+            this.city_textbox.Size = new System.Drawing.Size(139, 20);
+            this.city_textbox.TabIndex = 16;
             // 
             // label5
             // 
@@ -225,15 +228,44 @@
             this.bazaro_checkBox.Text = "bazaro.com.pl";
             this.bazaro_checkBox.UseVisualStyleBackColor = true;
             // 
+            // workstation_textBox
+            // 
+            this.workstation_textBox.Location = new System.Drawing.Point(12, 382);
+            this.workstation_textBox.Name = "workstation_textBox";
+            this.workstation_textBox.Size = new System.Drawing.Size(139, 20);
+            this.workstation_textBox.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 366);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Nazwa stanowiska";
+            // 
+            // najpewniej_checkBox
+            // 
+            this.najpewniej_checkBox.AutoSize = true;
+            this.najpewniej_checkBox.Location = new System.Drawing.Point(10, 285);
+            this.najpewniej_checkBox.Name = "najpewniej_checkBox";
+            this.najpewniej_checkBox.Size = new System.Drawing.Size(87, 17);
+            this.najpewniej_checkBox.TabIndex = 22;
+            this.najpewniej_checkBox.Text = "najpewniej.pl";
+            this.najpewniej_checkBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 457);
+            this.Controls.Add(this.najpewniej_checkBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.workstation_textBox);
             this.Controls.Add(this.bazaro_checkBox);
             this.Controls.Add(this.gdyniak_checkBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.place_textbox);
+            this.Controls.Add(this.city_textbox);
             this.Controls.Add(this.krakusik_checkBox);
             this.Controls.Add(this.kaliszak_checkBox);
             this.Controls.Add(this.webBrowser1);
@@ -275,10 +307,13 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.CheckBox kaliszak_checkBox;
         private System.Windows.Forms.CheckBox krakusik_checkBox;
-        private System.Windows.Forms.TextBox place_textbox;
+        private System.Windows.Forms.TextBox city_textbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox gdyniak_checkBox;
         private System.Windows.Forms.CheckBox bazaro_checkBox;
+        private System.Windows.Forms.TextBox workstation_textBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox najpewniej_checkBox;
     }
 }
 
