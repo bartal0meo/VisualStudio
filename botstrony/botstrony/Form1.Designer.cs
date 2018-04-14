@@ -53,13 +53,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.najpewniej_checkBox = new System.Windows.Forms.CheckBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tresc_textbox
             // 
-            this.tresc_textbox.Location = new System.Drawing.Point(179, 33);
+            this.tresc_textbox.Location = new System.Drawing.Point(179, 53);
             this.tresc_textbox.Name = "tresc_textbox";
-            this.tresc_textbox.Size = new System.Drawing.Size(358, 282);
+            this.tresc_textbox.Size = new System.Drawing.Size(358, 262);
             this.tresc_textbox.TabIndex = 0;
             this.tresc_textbox.Text = "";
             // 
@@ -72,9 +74,9 @@
             // 
             // upload_button
             // 
-            this.upload_button.Location = new System.Drawing.Point(28, 33);
+            this.upload_button.Location = new System.Drawing.Point(15, 34);
             this.upload_button.Name = "upload_button";
-            this.upload_button.Size = new System.Drawing.Size(109, 78);
+            this.upload_button.Size = new System.Drawing.Size(136, 78);
             this.upload_button.TabIndex = 2;
             this.upload_button.Text = "Wyślij";
             this.upload_button.UseVisualStyleBackColor = true;
@@ -164,11 +166,11 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(552, 33);
+            this.webBrowser1.Location = new System.Drawing.Point(552, 65);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(787, 408);
+            this.webBrowser1.Size = new System.Drawing.Size(585, 376);
             this.webBrowser1.TabIndex = 13;
             // 
             // kaliszak_checkBox
@@ -260,11 +262,21 @@
             this.progressBar1.Size = new System.Drawing.Size(109, 23);
             this.progressBar1.TabIndex = 23;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::botstrony.Properties.Resources.szaryBot;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 469);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 457);
+            this.BackgroundImage = global::botstrony.Properties.Resources.czerwonyBot;
+            this.ClientSize = new System.Drawing.Size(1145, 457);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.najpewniej_checkBox);
             this.Controls.Add(this.label6);
@@ -288,9 +300,11 @@
             this.Controls.Add(this.upload_button);
             this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.tresc_textbox);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,6 +336,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox najpewniej_checkBox;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
