@@ -54,6 +54,18 @@
             this.najpewniej_checkBox = new System.Windows.Forms.CheckBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.poznaniak_checkBox = new System.Windows.Forms.CheckBox();
+            this.wroclawiak_checkBox = new System.Windows.Forms.CheckBox();
+            this.katowiczak_checkBox = new System.Windows.Forms.CheckBox();
+            this.bydgoszczak_checkBox = new System.Windows.Forms.CheckBox();
+            this.szczeciniak_checkBox = new System.Windows.Forms.CheckBox();
+            this.gdaniak_checkBox = new System.Windows.Forms.CheckBox();
+            this.opolak_checkBox = new System.Windows.Forms.CheckBox();
+            this.toruniak_checkBox = new System.Windows.Forms.CheckBox();
+            this.oswiecimiak_checkBox = new System.Windows.Forms.CheckBox();
+            this.lubliniak_checkBox = new System.Windows.Forms.CheckBox();
+            this.zaznaczWszystkie = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,12 +86,13 @@
             // 
             // upload_button
             // 
+            this.upload_button.BackColor = System.Drawing.Color.Transparent;
             this.upload_button.Location = new System.Drawing.Point(15, 34);
             this.upload_button.Name = "upload_button";
             this.upload_button.Size = new System.Drawing.Size(136, 78);
             this.upload_button.TabIndex = 2;
             this.upload_button.Text = "Wyślij";
-            this.upload_button.UseVisualStyleBackColor = true;
+            this.upload_button.UseVisualStyleBackColor = false;
             this.upload_button.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -135,7 +148,7 @@
             // mylomza_checkBox
             // 
             this.mylomza_checkBox.AutoSize = true;
-            this.mylomza_checkBox.Location = new System.Drawing.Point(12, 147);
+            this.mylomza_checkBox.Location = new System.Drawing.Point(38, 181);
             this.mylomza_checkBox.Name = "mylomza_checkBox";
             this.mylomza_checkBox.Size = new System.Drawing.Size(77, 17);
             this.mylomza_checkBox.TabIndex = 9;
@@ -145,7 +158,7 @@
             // fourlomza_checkBox
             // 
             this.fourlomza_checkBox.AutoSize = true;
-            this.fourlomza_checkBox.Location = new System.Drawing.Point(12, 170);
+            this.fourlomza_checkBox.Location = new System.Drawing.Point(38, 204);
             this.fourlomza_checkBox.Name = "fourlomza_checkBox";
             this.fourlomza_checkBox.Size = new System.Drawing.Size(70, 17);
             this.fourlomza_checkBox.TabIndex = 10;
@@ -170,13 +183,13 @@
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(585, 376);
+            this.webBrowser1.Size = new System.Drawing.Size(585, 526);
             this.webBrowser1.TabIndex = 13;
             // 
             // kaliszak_checkBox
             // 
             this.kaliszak_checkBox.AutoSize = true;
-            this.kaliszak_checkBox.Location = new System.Drawing.Point(12, 193);
+            this.kaliszak_checkBox.Location = new System.Drawing.Point(38, 227);
             this.kaliszak_checkBox.Name = "kaliszak_checkBox";
             this.kaliszak_checkBox.Size = new System.Drawing.Size(75, 17);
             this.kaliszak_checkBox.TabIndex = 14;
@@ -186,7 +199,7 @@
             // krakusik_checkBox
             // 
             this.krakusik_checkBox.AutoSize = true;
-            this.krakusik_checkBox.Location = new System.Drawing.Point(12, 216);
+            this.krakusik_checkBox.Location = new System.Drawing.Point(38, 250);
             this.krakusik_checkBox.Name = "krakusik_checkBox";
             this.krakusik_checkBox.Size = new System.Drawing.Size(77, 17);
             this.krakusik_checkBox.TabIndex = 15;
@@ -195,15 +208,15 @@
             // 
             // city_textbox
             // 
-            this.city_textbox.Location = new System.Drawing.Point(12, 421);
+            this.city_textbox.Location = new System.Drawing.Point(179, 499);
             this.city_textbox.Name = "city_textbox";
-            this.city_textbox.Size = new System.Drawing.Size(139, 20);
+            this.city_textbox.Size = new System.Drawing.Size(358, 20);
             this.city_textbox.TabIndex = 16;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 405);
+            this.label5.Location = new System.Drawing.Point(179, 483);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 17;
@@ -212,7 +225,7 @@
             // gdyniak_checkBox
             // 
             this.gdyniak_checkBox.AutoSize = true;
-            this.gdyniak_checkBox.Location = new System.Drawing.Point(10, 239);
+            this.gdyniak_checkBox.Location = new System.Drawing.Point(38, 273);
             this.gdyniak_checkBox.Name = "gdyniak_checkBox";
             this.gdyniak_checkBox.Size = new System.Drawing.Size(74, 17);
             this.gdyniak_checkBox.TabIndex = 18;
@@ -222,7 +235,7 @@
             // bazaro_checkBox
             // 
             this.bazaro_checkBox.AutoSize = true;
-            this.bazaro_checkBox.Location = new System.Drawing.Point(10, 262);
+            this.bazaro_checkBox.Location = new System.Drawing.Point(38, 296);
             this.bazaro_checkBox.Name = "bazaro_checkBox";
             this.bazaro_checkBox.Size = new System.Drawing.Size(92, 17);
             this.bazaro_checkBox.TabIndex = 19;
@@ -231,15 +244,15 @@
             // 
             // workstation_textBox
             // 
-            this.workstation_textBox.Location = new System.Drawing.Point(12, 382);
+            this.workstation_textBox.Location = new System.Drawing.Point(179, 460);
             this.workstation_textBox.Name = "workstation_textBox";
-            this.workstation_textBox.Size = new System.Drawing.Size(139, 20);
+            this.workstation_textBox.Size = new System.Drawing.Size(358, 20);
             this.workstation_textBox.TabIndex = 20;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 366);
+            this.label6.Location = new System.Drawing.Point(176, 444);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 21;
@@ -248,7 +261,7 @@
             // najpewniej_checkBox
             // 
             this.najpewniej_checkBox.AutoSize = true;
-            this.najpewniej_checkBox.Location = new System.Drawing.Point(10, 285);
+            this.najpewniej_checkBox.Location = new System.Drawing.Point(38, 319);
             this.najpewniej_checkBox.Name = "najpewniej_checkBox";
             this.najpewniej_checkBox.Size = new System.Drawing.Size(87, 17);
             this.najpewniej_checkBox.TabIndex = 22;
@@ -267,16 +280,137 @@
             this.pictureBox1.BackgroundImage = global::botstrony.Properties.Resources.szaryBot;
             this.pictureBox1.Location = new System.Drawing.Point(0, -9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 469);
+            this.pictureBox1.Size = new System.Drawing.Size(173, 612);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
+            // 
+            // poznaniak_checkBox
+            // 
+            this.poznaniak_checkBox.AutoSize = true;
+            this.poznaniak_checkBox.Location = new System.Drawing.Point(38, 343);
+            this.poznaniak_checkBox.Name = "poznaniak_checkBox";
+            this.poznaniak_checkBox.Size = new System.Drawing.Size(86, 17);
+            this.poznaniak_checkBox.TabIndex = 25;
+            this.poznaniak_checkBox.Text = "poznaniak.pl";
+            this.poznaniak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // wroclawiak_checkBox
+            // 
+            this.wroclawiak_checkBox.AutoSize = true;
+            this.wroclawiak_checkBox.Location = new System.Drawing.Point(38, 367);
+            this.wroclawiak_checkBox.Name = "wroclawiak_checkBox";
+            this.wroclawiak_checkBox.Size = new System.Drawing.Size(90, 17);
+            this.wroclawiak_checkBox.TabIndex = 26;
+            this.wroclawiak_checkBox.Text = "wroclawiak.pl";
+            this.wroclawiak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // katowiczak_checkBox
+            // 
+            this.katowiczak_checkBox.AutoSize = true;
+            this.katowiczak_checkBox.Location = new System.Drawing.Point(38, 391);
+            this.katowiczak_checkBox.Name = "katowiczak_checkBox";
+            this.katowiczak_checkBox.Size = new System.Drawing.Size(91, 17);
+            this.katowiczak_checkBox.TabIndex = 27;
+            this.katowiczak_checkBox.Text = "katowiczak.pl";
+            this.katowiczak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // bydgoszczak_checkBox
+            // 
+            this.bydgoszczak_checkBox.AutoSize = true;
+            this.bydgoszczak_checkBox.Location = new System.Drawing.Point(38, 415);
+            this.bydgoszczak_checkBox.Name = "bydgoszczak_checkBox";
+            this.bydgoszczak_checkBox.Size = new System.Drawing.Size(99, 17);
+            this.bydgoszczak_checkBox.TabIndex = 28;
+            this.bydgoszczak_checkBox.Text = "bydgoszczak.pl";
+            this.bydgoszczak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // szczeciniak_checkBox
+            // 
+            this.szczeciniak_checkBox.AutoSize = true;
+            this.szczeciniak_checkBox.Location = new System.Drawing.Point(38, 439);
+            this.szczeciniak_checkBox.Name = "szczeciniak_checkBox";
+            this.szczeciniak_checkBox.Size = new System.Drawing.Size(92, 17);
+            this.szczeciniak_checkBox.TabIndex = 29;
+            this.szczeciniak_checkBox.Text = "szczeciniak.pl";
+            this.szczeciniak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // gdaniak_checkBox
+            // 
+            this.gdaniak_checkBox.AutoSize = true;
+            this.gdaniak_checkBox.Location = new System.Drawing.Point(38, 463);
+            this.gdaniak_checkBox.Name = "gdaniak_checkBox";
+            this.gdaniak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.gdaniak_checkBox.TabIndex = 30;
+            this.gdaniak_checkBox.Text = "gdaniak.pl";
+            this.gdaniak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // opolak_checkBox
+            // 
+            this.opolak_checkBox.AutoSize = true;
+            this.opolak_checkBox.Location = new System.Drawing.Point(38, 487);
+            this.opolak_checkBox.Name = "opolak_checkBox";
+            this.opolak_checkBox.Size = new System.Drawing.Size(69, 17);
+            this.opolak_checkBox.TabIndex = 31;
+            this.opolak_checkBox.Text = "opolak.pl";
+            this.opolak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // toruniak_checkBox
+            // 
+            this.toruniak_checkBox.AutoSize = true;
+            this.toruniak_checkBox.Location = new System.Drawing.Point(38, 511);
+            this.toruniak_checkBox.Name = "toruniak_checkBox";
+            this.toruniak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.toruniak_checkBox.TabIndex = 32;
+            this.toruniak_checkBox.Text = "toruniak.pl";
+            this.toruniak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // oswiecimiak_checkBox
+            // 
+            this.oswiecimiak_checkBox.AutoSize = true;
+            this.oswiecimiak_checkBox.Location = new System.Drawing.Point(38, 535);
+            this.oswiecimiak_checkBox.Name = "oswiecimiak_checkBox";
+            this.oswiecimiak_checkBox.Size = new System.Drawing.Size(94, 17);
+            this.oswiecimiak_checkBox.TabIndex = 33;
+            this.oswiecimiak_checkBox.Text = "oswiecimiak.pl";
+            this.oswiecimiak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // lubliniak_checkBox
+            // 
+            this.lubliniak_checkBox.AutoSize = true;
+            this.lubliniak_checkBox.Location = new System.Drawing.Point(38, 559);
+            this.lubliniak_checkBox.Name = "lubliniak_checkBox";
+            this.lubliniak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.lubliniak_checkBox.TabIndex = 34;
+            this.lubliniak_checkBox.Text = "lubliniak.pl";
+            this.lubliniak_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // zaznaczWszystkie
+            // 
+            this.zaznaczWszystkie.Location = new System.Drawing.Point(0, 148);
+            this.zaznaczWszystkie.Name = "zaznaczWszystkie";
+            this.zaznaczWszystkie.Size = new System.Drawing.Size(173, 23);
+            this.zaznaczWszystkie.TabIndex = 35;
+            this.zaznaczWszystkie.Text = "Zaznacz wszystkie";
+            this.zaznaczWszystkie.UseVisualStyleBackColor = true;
+            this.zaznaczWszystkie.Click += new System.EventHandler(this.zaznaczWszystkie_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::botstrony.Properties.Resources.czerwonyBot;
-            this.ClientSize = new System.Drawing.Size(1145, 457);
+            this.ClientSize = new System.Drawing.Size(1145, 603);
+            this.Controls.Add(this.zaznaczWszystkie);
+            this.Controls.Add(this.lubliniak_checkBox);
+            this.Controls.Add(this.oswiecimiak_checkBox);
+            this.Controls.Add(this.toruniak_checkBox);
+            this.Controls.Add(this.opolak_checkBox);
+            this.Controls.Add(this.gdaniak_checkBox);
+            this.Controls.Add(this.szczeciniak_checkBox);
+            this.Controls.Add(this.bydgoszczak_checkBox);
+            this.Controls.Add(this.katowiczak_checkBox);
+            this.Controls.Add(this.wroclawiak_checkBox);
+            this.Controls.Add(this.poznaniak_checkBox);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.najpewniej_checkBox);
             this.Controls.Add(this.label6);
@@ -337,6 +471,18 @@
         private System.Windows.Forms.CheckBox najpewniej_checkBox;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.CheckBox poznaniak_checkBox;
+        private System.Windows.Forms.CheckBox wroclawiak_checkBox;
+        private System.Windows.Forms.CheckBox katowiczak_checkBox;
+        private System.Windows.Forms.CheckBox bydgoszczak_checkBox;
+        private System.Windows.Forms.CheckBox szczeciniak_checkBox;
+        private System.Windows.Forms.CheckBox gdaniak_checkBox;
+        private System.Windows.Forms.CheckBox opolak_checkBox;
+        private System.Windows.Forms.CheckBox toruniak_checkBox;
+        private System.Windows.Forms.CheckBox oswiecimiak_checkBox;
+        private System.Windows.Forms.CheckBox lubliniak_checkBox;
+        private System.Windows.Forms.Button zaznaczWszystkie;
     }
 }
 
