@@ -16,7 +16,17 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+          //  webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
+            
+       // Od pictureBox2 do pictureBox18 - zielone 
+            //Od 19 do 35 czerwone 
+          //  pictureBox23.Visible = true;
+         
+           
+>>>>>>> 5c917daa1650dfb842f82319245e40692dde1d03
         }
 
         public Form1()
