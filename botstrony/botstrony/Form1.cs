@@ -57,8 +57,6 @@ namespace botstrony
                     MessageBox.Show("Wybierz stronę", "Nie wybrano stron");
                 }
 
-            int start, stop, time;
-            start = Environment.TickCount & Int32.MaxValue;
 
             if (CheckForInternetConnection() == true && CheckForText() == 0 && CheckBox() == true)
             {
@@ -130,14 +128,7 @@ namespace botstrony
                     {
                         lubliniak();
                     }
-
-
-                    //jumla tez odpada bo obrazek
-                    //epracazagranica.pl - trzeba sie zastanowic nad tym
-                    stop = Environment.TickCount & Int32.MaxValue;
-                    time = stop - start;
-                    LoadingBar(progressBar1, time);
-            }
+                }
             }
             catch
             {
@@ -1170,22 +1161,6 @@ namespace botstrony
             }
         }
 
-        private void LoadingBar(System.Windows.Forms.ProgressBar progressBar, int time)
-        {
-            progressBar.Maximum = time;
-            progressBar.Step = 1;
-
-            for (int j = 0; j < time; j++)
-            {
-                double pow = Math.Pow(j, j); //Calculation
-                progressBar.PerformStep();
-            }
-
-            if (progressBar1.Value == time)
-            {
-                progressBar1.Value = 1;
-            }
-        }
         public bool CheckBox()
         {
             bool check = false;
