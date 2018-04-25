@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace botstrony
 {
@@ -82,7 +83,7 @@ namespace botstrony
                     }
                     if (bazaro_checkBox.Checked)
                     {
-                        bazaro();
+                      //  bazaro();
                     }
                     if (najpewniej_checkBox.Checked)
                     {
@@ -157,7 +158,7 @@ namespace botstrony
                     }
                 }
 
-               /* HtmlElementCollection wcisk = this.webBrowser1.Document.GetElementsByTagName("button");
+              HtmlElementCollection wcisk = this.webBrowser1.Document.GetElementsByTagName("button");
                 foreach (HtmlElement el in wcisk)
                 {
                     if (el.GetAttribute("type").Equals("button"))
@@ -165,10 +166,10 @@ namespace botstrony
                         el.InvokeMember("click");
                     }
                 }
-                * /
 
+                await PageLoad(5);
                 //sprawdzenie czy dodalo ogloszenie
-                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 if (webBrowser1.Url.ToString() == "http://www.mylomza.pl/ogloszenia/show/0_.html")
                  {
                     pictureBox2.Visible = true;
                  }
@@ -176,7 +177,7 @@ namespace botstrony
                  {
                     pictureBox19.Visible = true;
                  }
-                 */
+                 
             }
             catch
             {
@@ -198,7 +199,7 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("form_kat").SetAttribute("value", "4");
                 webBrowser1.Document.GetElementById("form_tresc").InnerText = tresc_textbox.Text;
 
-                /*
+             
                                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
                                 foreach (HtmlElement el in elc)
                                 {
@@ -207,10 +208,10 @@ namespace botstrony
                                         el.InvokeMember("click");
                                     }
                                 }
-                 */
-
+                 
+                await PageLoad(5);
                 //sprawdzenie czy dodalo ogloszenie
-                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                if (webBrowser1.Url.ToString() == "https://www.4lomza.pl/ogl2.php?mod=new")
                  {
                     pictureBox3.Visible = true;
                  }
@@ -218,7 +219,7 @@ namespace botstrony
                  {
                     pictureBox20.Visible = true;
                  }
-                 */
+                 
             }
             catch
             {
@@ -237,11 +238,24 @@ namespace botstrony
                 HtmlElementCollection ele = webBrowser1.Document.GetElementsByTagName("select");
                 foreach (HtmlElement el in ele)
                 {
+                   
+                  
+                   // Thread.Sleep(500);
+
                     if (el.GetAttribute("name").Equals("district"))
                     {
-                        el.SetAttribute("value", "15");
+                        el.InvokeMember("onclick");
+                        Thread.Sleep(500);
+                        if ((el.GetAttribute("value").Equals("15")))
+                        {
+                            el.InvokeMember("onclick");
+                        }
+                     }
+                        Thread.Sleep(500);
+                        el.InvokeMember("onclick");
                     }
-                }
+                
+
 
                 webBrowser1.Document.GetElementById("email").SetAttribute("value", email_textbox.Text);
                 webBrowser1.Document.GetElementById("adtitle").SetAttribute("value", name_textbox.Text);
@@ -258,7 +272,7 @@ namespace botstrony
                     }
                 }
 
-                /*               HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("button");
+                              HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("button");
                                foreach (HtmlElement elems in element)
                                {
                                    if (elems.GetAttribute("class").Equals("btn btn-default btn-sm"))
@@ -266,18 +280,18 @@ namespace botstrony
                                        elems.InvokeMember("click");
                                    }
                                }
-                 * /
+                               await PageLoad(5);
 
                                //sprawdzenie czy dodalo ogloszenie
-                               /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                                if (webBrowser1.Url.ToString() == "https://bazaro.com.pl/index.php?view=post&subcatid=49&posted=1")
                                 {
-                                   pictureBox4.Visible = true;
+                                   pictureBox7.Visible = true;
                                 }
                                 else
                                 {
-                                   pictureBox21.Visible = true;
+                                   pictureBox24.Visible = true;
                                 }
-                                */
+                                
             }
             catch
             {
