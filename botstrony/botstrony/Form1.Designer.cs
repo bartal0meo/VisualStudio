@@ -162,7 +162,7 @@
             this.upload_button.FlatAppearance.BorderSize = 0;
             this.upload_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.upload_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.upload_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.upload_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.upload_button.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upload_button.Location = new System.Drawing.Point(0, 98);
             this.upload_button.Name = "upload_button";
@@ -508,6 +508,7 @@
             this.zaznaczWszystkie.BackgroundImage = global::botstrony.Properties.Resources.Graybtn;
             this.zaznaczWszystkie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.zaznaczWszystkie.FlatAppearance.BorderSize = 0;
+            this.zaznaczWszystkie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zaznaczWszystkie.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zaznaczWszystkie.Location = new System.Drawing.Point(0, 138);
             this.zaznaczWszystkie.Name = "zaznaczWszystkie";
