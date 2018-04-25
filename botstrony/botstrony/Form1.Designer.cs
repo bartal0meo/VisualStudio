@@ -251,6 +251,7 @@
             this.fourlomza_checkBox.TabIndex = 10;
             this.fourlomza_checkBox.Text = "4lomza.pl";
             this.fourlomza_checkBox.UseVisualStyleBackColor = true;
+            this.fourlomza_checkBox.CheckedChanged += new System.EventHandler(this.fourlomza_checkBox_CheckedChanged);
             // 
             // timer1
             // 
@@ -279,7 +280,7 @@
             this.kaliszak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kaliszak_checkBox.BackgroundImage")));
             this.kaliszak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.kaliszak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kaliszak_checkBox.Location = new System.Drawing.Point(38, 227);
+            this.kaliszak_checkBox.Location = new System.Drawing.Point(38, 250);
             this.kaliszak_checkBox.Name = "kaliszak_checkBox";
             this.kaliszak_checkBox.Size = new System.Drawing.Size(93, 21);
             this.kaliszak_checkBox.TabIndex = 14;
@@ -292,7 +293,7 @@
             this.krakusik_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("krakusik_checkBox.BackgroundImage")));
             this.krakusik_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.krakusik_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.krakusik_checkBox.Location = new System.Drawing.Point(38, 250);
+            this.krakusik_checkBox.Location = new System.Drawing.Point(37, 227);
             this.krakusik_checkBox.Name = "krakusik_checkBox";
             this.krakusik_checkBox.Size = new System.Drawing.Size(97, 21);
             this.krakusik_checkBox.TabIndex = 15;
