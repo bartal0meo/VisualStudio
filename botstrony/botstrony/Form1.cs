@@ -16,17 +16,12 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
+            
           //  webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
             
        // Od pictureBox2 do pictureBox18 - zielone 
             //Od 19 do 35 czerwone 
-          //  pictureBox23.Visible = true;
-         
-           
->>>>>>> 5c917daa1650dfb842f82319245e40692dde1d03
+          //  pictureBox23.Visible = true;     
         }
 
         public Form1()
@@ -34,12 +29,20 @@ namespace botstrony
             InitializeComponent();
             timer1.Interval = 100;
             timer1.Start();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                PictureBox[] boxes = { pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30, pictureBox31, pictureBox32, pictureBox33, pictureBox34, pictureBox35 };
+
+                for (int i = 0; i > boxes.Length;i++)
+                {
+                    boxes[i].Visible = false;
+                }
+
                 if (CheckForInternetConnection() == false)
                 {
                     MessageBox.Show("Brak połączenia z internetem", "Błąd");
@@ -176,7 +179,11 @@ namespace botstrony
                 //sprawdzenie czy dodalo ogloszenie
                 /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
                  {
-
+                    pictureBox2.Visible = true;
+                 }
+                 else
+                 {
+                    pictureBox19.Visible = true;
                  }
                  */
             }
@@ -200,21 +207,25 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("form_kat").SetAttribute("value", "4");
                 webBrowser1.Document.GetElementById("form_tresc").InnerText = tresc_textbox.Text;
 
-/*
-                HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                foreach (HtmlElement el in elc)
-                {
-                    if (el.GetAttribute("type").Equals("submit"))
-                    {
-                        el.InvokeMember("click");
-                    }
-                }
- */
+                /*
+                                HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+                                foreach (HtmlElement el in elc)
+                                {
+                                    if (el.GetAttribute("type").Equals("submit"))
+                                    {
+                                        el.InvokeMember("click");
+                                    }
+                                }
+                 */
 
                 //sprawdzenie czy dodalo ogloszenie
                 /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
                  {
-
+                    pictureBox3.Visible = true;
+                 }
+                 else
+                 {
+                    pictureBox20.Visible = true;
                  }
                  */
             }
@@ -256,22 +267,26 @@ namespace botstrony
                     }
                 }
 
- /*               HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("button");
-                foreach (HtmlElement elems in element)
-                {
-                    if (elems.GetAttribute("class").Equals("btn btn-default btn-sm"))
-                    {
-                        elems.InvokeMember("click");
-                    }
-                }
-  * /
+                /*               HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("button");
+                               foreach (HtmlElement elems in element)
+                               {
+                                   if (elems.GetAttribute("class").Equals("btn btn-default btn-sm"))
+                                   {
+                                       elems.InvokeMember("click");
+                                   }
+                               }
+                 * /
 
-                //sprawdzenie czy dodalo ogloszenie
-                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                 {
-
-                 }
-                 */
+                               //sprawdzenie czy dodalo ogloszenie
+                               /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                                {
+                                   pictureBox4.Visible = true;
+                                }
+                                else
+                                {
+                                   pictureBox21.Visible = true;
+                                }
+                                */
             }
             catch
             {
@@ -308,22 +323,26 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
                 //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
 
-              /*  HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                foreach (HtmlElement el in elc)
-                {
-                    if (el.GetAttribute("type").Equals("submit"))
-                    {
-                        el.InvokeMember("click");
-                    }
-                }
-               * /
+                /*  HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+                  foreach (HtmlElement el in elc)
+                  {
+                      if (el.GetAttribute("type").Equals("submit"))
+                      {
+                          el.InvokeMember("click");
+                      }
+                  }
+                 * /
 
-                //sprawdzenie czy dodalo ogloszenie
-                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                 {
-
-                 }
-                 */
+                  //sprawdzenie czy dodalo ogloszenie
+                                 /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                                  {
+                                     pictureBox5.Visible = true;
+                                  }
+                                  else
+                                  {
+                                     pictureBox22.Visible = true;
+                                  }
+                   */
             }
             catch
             {
@@ -357,22 +376,26 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
-    /*            HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                foreach (HtmlElement el in elc)
-                {
-                    if (el.GetAttribute("type").Equals("submit"))
-                    {
-                        el.InvokeMember("click");
-                    }
-                }
-     */
+                /*            HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+                            foreach (HtmlElement el in elc)
+                            {
+                                if (el.GetAttribute("type").Equals("submit"))
+                                {
+                                    el.InvokeMember("click");
+                                }
+                            }
+                 */
 
                 //sprawdzenie czy dodalo ogloszenie
-              /*  if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                {
-
-                }
-              */
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                    pictureBox6.Visible = true;
+                 }
+                 else
+                 {
+                    pictureBox23.Visible = true;
+                 }
+*/
             }
             catch
             {
@@ -409,20 +432,24 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
                 //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
 
-   /*             HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                foreach (HtmlElement el in elc)
-                {
-                    if (el.GetAttribute("type").Equals("submit"))
-                    {
-                        el.InvokeMember("click");
-                    }
-                }
-    */
+                /*             HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+                             foreach (HtmlElement el in elc)
+                             {
+                                 if (el.GetAttribute("type").Equals("submit"))
+                                 {
+                                     el.InvokeMember("click");
+                                 }
+                             }
+                 */
 
                 //sprawdzenie czy dodalo ogloszenie
                 /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
                  {
-
+                    pictureBox7.Visible = true;
+                 }
+                 else
+                 {
+                    pictureBox24.Visible = true;
                  }
                  */
             }
@@ -491,12 +518,16 @@ namespace botstrony
                     }
                 }
 
-                         //sprawdzenie czy dodalo ogloszenie
-                         /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                          {
-
-                          }
-                          */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                    pictureBox8.Visible = true;
+                 }
+                 else
+                 {
+                    pictureBox25.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -542,12 +573,16 @@ namespace botstrony
                  }
                  */
 
-                 //sprawdzenie czy dodalo ogloszenie
-                 /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                 {
-
-                 }
-                 */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                {
+                   pictureBox9.Visible = true;
+                }
+                else
+                {
+                   pictureBox26.Visible = true;
+                }
+                */
             }
             catch
             {
@@ -594,12 +629,16 @@ namespace botstrony
                       }
                  */
 
-                      //sprawdzenie czy dodalo ogloszenie
-                      /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                       {
-
-                       }
-                       */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                     pictureBox10.Visible = true;
+                  }
+                  else
+                  {
+                     pictureBox27.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -646,12 +685,16 @@ namespace botstrony
                     }
                  */
 
-                    //sprawdzenie czy dodalo ogloszenie
-                    /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                   {
-
-                   }
-                   */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+               {
+               pictureBox11.Visible = true;
+              }
+              else
+              {
+                 pictureBox28.Visible = true;
+               }
+               */
             }
             catch
             {
@@ -698,12 +741,16 @@ namespace botstrony
                      }
                  */
 
-                     //sprawdzenie czy dodalo ogloszenie
-                     /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                      {
-
-                      }
-                      */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                {
+                    pictureBox12.Visible = true;
+                }
+                else
+                {
+                    pictureBox29.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -750,12 +797,16 @@ namespace botstrony
                           }
                  */
 
-                          //sprawdzenie czy dodalo ogloszenie
-                          /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                           {
-
-                           }
-                           */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                    pictureBox13.Visible = true;
+                 }
+                 else
+                 {
+                    pictureBox30.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -801,12 +852,16 @@ namespace botstrony
                        }
                  */
 
-                       //sprawdzenie czy dodalo ogloszenie
-                       /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                        {
-
-                        }
-                        */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                    pictureBox14.Visible = true;
+                 }
+                 else
+                 {
+                    pictureBox31.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -852,12 +907,16 @@ namespace botstrony
                   }
                  */
 
-                  //sprawdzenie czy dodalo ogloszenie
-                  /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                   {
-
-                   }
-                   */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                  pictureBox15.Visible = true;
+               }
+               else
+               {
+                  pictureBox32.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -904,12 +963,16 @@ namespace botstrony
                     }
                  */
 
-                    //sprawdzenie czy dodalo ogloszenie
-                    /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                     {
-
-                     }
-                     */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                    pictureBox16.Visible = true;
+                }
+                 else
+                {
+                    pictureBox33.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -956,12 +1019,16 @@ namespace botstrony
                          }
                  */
 
-                         //sprawdzenie czy dodalo ogloszenie
-                         /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                          {
-
-                          }
-                          */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                       pictureBox17.Visible = true;
+                   }
+                    else
+                   {
+                       pictureBox34.Visible = true;
+                 }
+                 */
             }
             catch
             {
@@ -1009,12 +1076,16 @@ namespace botstrony
                     }
                  */
 
-                    //sprawdzenie czy dodalo ogloszenie
-                   /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                    {
-
-                    }
-                    */
+                //sprawdzenie czy dodalo ogloszenie
+                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
+                 {
+                    pictureBox18.Visible = true;
+                }
+                 else
+                {
+                    pictureBox35.Visible = true;
+                 }
+                 */
             }
             catch
             {
