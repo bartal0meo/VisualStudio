@@ -16,7 +16,7 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-          //  webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
+
         }
 
         public Form1()
@@ -43,6 +43,7 @@ namespace botstrony
                 {
                     MessageBox.Show("Wybierz stronę", "Nie wybrano stron");
                 }
+
             int start, stop, time;
             start = Environment.TickCount & Int32.MaxValue;
 
@@ -132,10 +133,14 @@ namespace botstrony
 
         }
 
-        private void mylomza()
+        private async void mylomza()
         {
             try
             {
+                webBrowser1.Navigate("http://www.mylomza.pl/ogloszenia/dodaj2.html");
+
+                await PageLoad(5);
+
                 webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
                 webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
 
@@ -171,11 +176,14 @@ namespace botstrony
             }
         }
 
-        private void fourlomza()
+        private async void fourlomza()
         {
             try
             {
                 webBrowser1.Navigate("https://www.4lomza.pl/ogl2.php?mod=new");
+
+                await PageLoad(5);
+
                 webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
                 webBrowser1.Document.GetElementById("form_nazwa").InnerText = name_textbox.Text;
                 webBrowser1.Document.GetElementById("form_tel").InnerText = phone_textbox.Text;
@@ -206,11 +214,13 @@ namespace botstrony
             }
         }
 
-        private void bazaro()
+        private async void bazaro()
         {
             try
             {
                 webBrowser1.Navigate("https://bazaro.com.pl/?view=post&catid=5&subcatid=49");
+
+                await PageLoad(5);
 
                 HtmlElementCollection ele = webBrowser1.Document.GetElementsByTagName("select");
                 foreach (HtmlElement el in ele)
@@ -265,6 +275,8 @@ namespace botstrony
             {
                 webBrowser1.Navigate("http://www.kaliszak.pl/dodaj-ogloszenie/formularz");
 
+                await PageLoad(5);
+
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
@@ -315,6 +327,8 @@ namespace botstrony
             {
                 webBrowser1.Navigate("http://www.krakusik.pl/dodaj-ogloszenie/formularz");
 
+                await PageLoad(5);
+
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
@@ -361,6 +375,7 @@ namespace botstrony
             try
             {
                 webBrowser1.Navigate("http://www.gdyniak.pl/dodaj-ogloszenie/formularz");
+
                 await PageLoad(5);
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
@@ -412,6 +427,7 @@ namespace botstrony
             try
             {
                 webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
+
                 await PageLoad(5);
 
                 HtmlElementCollection el = webBrowser1.Document.GetElementsByTagName("input");
@@ -436,11 +452,6 @@ namespace botstrony
                     {
                         ele.SetAttribute("value", email_textbox.Text);
                     }
-                    /*
-                    if (ele.GetAttribute("name").Equals("dodaj"))
-                    {
-                        ele.InvokeMember("click");
-                    } */
                 }
 
                 HtmlElementCollection elm = webBrowser1.Document.GetElementsByTagName("select");
@@ -452,15 +463,23 @@ namespace botstrony
                     }
                 }
 
-                /*           HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("textarea");
-                         foreach (HtmlElement elems in element)
-                         {
-                             if (elems.GetAttribute("name").Equals("tresc"))
-                             {
-                                 elems.SetAttribute("value", tresc_textbox.Text);
-                             }
-                         }
-                 */
+                HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("textarea");
+                foreach (HtmlElement elems in element)
+                {
+                    if (elems.GetAttribute("name").Equals("tresc"))
+                    {
+                        elems.SetAttribute("value", tresc_textbox.Text);
+                    }
+                }
+
+                HtmlElementCollection elmo = webBrowser1.Document.GetElementsByTagName("submit");
+                foreach (HtmlElement elmon in elmo)
+                {
+                    if (elmon.GetAttribute("name").Equals("dodaj"))
+                    {
+                        elmon.InvokeMember("click");
+                    }
+                }
 
                          //sprawdzenie czy dodalo ogloszenie
                          /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
@@ -479,6 +498,8 @@ namespace botstrony
             try
             {
                 webBrowser1.Navigate("http://www.poznaniak.pl/dodaj-ogloszenie/formularz");
+
+                await PageLoad(5);
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -530,6 +551,8 @@ namespace botstrony
             {
                 webBrowser1.Navigate("http://www.wroclawiak.pl/dodaj-ogloszenie/formularz");
 
+                await PageLoad(5);
+
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
@@ -579,6 +602,7 @@ namespace botstrony
             try
             {
                 webBrowser1.Navigate("http://www.katowiczak.pl/dodaj-ogloszenie/formularz");
+
                 await PageLoad(3);
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
@@ -631,6 +655,8 @@ namespace botstrony
             {
                 webBrowser1.Navigate("http://www.bydgoszczak.pl/dodaj-ogloszenie/formularz");
 
+                await PageLoad(5);
+
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
@@ -681,6 +707,8 @@ namespace botstrony
             {
                 webBrowser1.Navigate("http://www.szczeciniak.pl/dodaj-ogloszenie/formularz");
 
+                await PageLoad(5);
+
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
@@ -730,6 +758,8 @@ namespace botstrony
             {
                 webBrowser1.Navigate("http://www.gdaniak.pl/dodaj-ogloszenie/formularz");
 
+                await PageLoad(5);
+
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
@@ -778,6 +808,8 @@ namespace botstrony
             try
             {
                 webBrowser1.Navigate("http://www.opolak.pl/dodaj-ogloszenie/formularz");
+
+                await PageLoad(5);
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -829,6 +861,8 @@ namespace botstrony
             {
                 webBrowser1.Navigate("http://www.toruniak.pl/dodaj-ogloszenie/formularz");
 
+                await PageLoad(5);
+
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
@@ -878,6 +912,8 @@ namespace botstrony
             try
             {
                 webBrowser1.Navigate("http://www.oswiecimiak.pl/dodaj-ogloszenie/formularz");
+
+                await PageLoad(5);
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -929,6 +965,8 @@ namespace botstrony
             try
             {
                 webBrowser1.Navigate("http://www.lubliniak.pl/dodaj-ogloszenie/formularz");
+
+                await PageLoad(5);
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
