@@ -103,6 +103,36 @@ namespace botstrony.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap czerwonyguzik {
+            get {
+                object obj = ResourceManager.GetObject("czerwonyguzik", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eastserviceorgpng {
+            get {
+                object obj = ResourceManager.GetObject("eastserviceorgpng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Graybtn {
+            get {
+                object obj = ResourceManager.GetObject("Graybtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap szaryBot {
             get {
                 object obj = ResourceManager.GetObject("szaryBot", resourceCulture);

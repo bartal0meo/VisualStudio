@@ -121,8 +121,11 @@
   <data name="check_green1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check_green1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="szaryBot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\szaryBot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eastserviceorgpng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eastserviceorgpng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="czerwonyBot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\czerwonyBot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,10 +133,16 @@
   <data name="texttlo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\texttlo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="szaryBot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\szaryBot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="czerwonyguzik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\czerwonyguzik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graybtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graybtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

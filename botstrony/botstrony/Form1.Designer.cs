@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tresc_textbox = new System.Windows.Forms.RichTextBox();
             this.name_textbox = new System.Windows.Forms.TextBox();
             this.upload_button = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.workstation_textBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.najpewniej_checkBox = new System.Windows.Forms.CheckBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.poznaniak_checkBox = new System.Windows.Forms.CheckBox();
             this.wroclawiak_checkBox = new System.Windows.Forms.CheckBox();
@@ -100,6 +100,7 @@
             this.pictureBox33 = new System.Windows.Forms.PictureBox();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -140,7 +141,7 @@
             // 
             // tresc_textbox
             // 
-            this.tresc_textbox.Location = new System.Drawing.Point(179, 51);
+            this.tresc_textbox.Location = new System.Drawing.Point(179, 98);
             this.tresc_textbox.Name = "tresc_textbox";
             this.tresc_textbox.Size = new System.Drawing.Size(358, 262);
             this.tresc_textbox.TabIndex = 0;
@@ -148,7 +149,7 @@
             // 
             // name_textbox
             // 
-            this.name_textbox.Location = new System.Drawing.Point(179, 343);
+            this.name_textbox.Location = new System.Drawing.Point(179, 390);
             this.name_textbox.Name = "name_textbox";
             this.name_textbox.Size = new System.Drawing.Size(358, 20);
             this.name_textbox.TabIndex = 1;
@@ -156,9 +157,17 @@
             // upload_button
             // 
             this.upload_button.BackColor = System.Drawing.Color.Transparent;
-            this.upload_button.Location = new System.Drawing.Point(15, 34);
+            this.upload_button.BackgroundImage = global::botstrony.Properties.Resources.Graybtn;
+            this.upload_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.upload_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.upload_button.FlatAppearance.BorderSize = 0;
+            this.upload_button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.upload_button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.upload_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.upload_button.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upload_button.Location = new System.Drawing.Point(0, 98);
             this.upload_button.Name = "upload_button";
-            this.upload_button.Size = new System.Drawing.Size(136, 78);
+            this.upload_button.Size = new System.Drawing.Size(173, 34);
             this.upload_button.TabIndex = 2;
             this.upload_button.Text = "Wyślij";
             this.upload_button.UseVisualStyleBackColor = false;
@@ -167,7 +176,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 17);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(179, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 3;
@@ -176,7 +186,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 327);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(176, 374);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 4;
@@ -184,7 +195,7 @@
             // 
             // email_textbox
             // 
-            this.email_textbox.Location = new System.Drawing.Point(179, 382);
+            this.email_textbox.Location = new System.Drawing.Point(179, 429);
             this.email_textbox.Name = "email_textbox";
             this.email_textbox.Size = new System.Drawing.Size(358, 20);
             this.email_textbox.TabIndex = 5;
@@ -192,7 +203,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 366);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(176, 413);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 6;
@@ -200,7 +212,7 @@
             // 
             // phone_textbox
             // 
-            this.phone_textbox.Location = new System.Drawing.Point(179, 421);
+            this.phone_textbox.Location = new System.Drawing.Point(179, 468);
             this.phone_textbox.Name = "phone_textbox";
             this.phone_textbox.Size = new System.Drawing.Size(358, 20);
             this.phone_textbox.TabIndex = 7;
@@ -208,7 +220,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(176, 405);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(176, 452);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 8;
@@ -217,9 +230,12 @@
             // mylomza_checkBox
             // 
             this.mylomza_checkBox.AutoSize = true;
+            this.mylomza_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mylomza_checkBox.BackgroundImage")));
+            this.mylomza_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mylomza_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mylomza_checkBox.Location = new System.Drawing.Point(38, 181);
             this.mylomza_checkBox.Name = "mylomza_checkBox";
-            this.mylomza_checkBox.Size = new System.Drawing.Size(77, 17);
+            this.mylomza_checkBox.Size = new System.Drawing.Size(96, 21);
             this.mylomza_checkBox.TabIndex = 9;
             this.mylomza_checkBox.Text = "mylomza.pl";
             this.mylomza_checkBox.UseVisualStyleBackColor = true;
@@ -227,9 +243,12 @@
             // fourlomza_checkBox
             // 
             this.fourlomza_checkBox.AutoSize = true;
+            this.fourlomza_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fourlomza_checkBox.BackgroundImage")));
+            this.fourlomza_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fourlomza_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fourlomza_checkBox.Location = new System.Drawing.Point(38, 204);
             this.fourlomza_checkBox.Name = "fourlomza_checkBox";
-            this.fourlomza_checkBox.Size = new System.Drawing.Size(70, 17);
+            this.fourlomza_checkBox.Size = new System.Drawing.Size(85, 21);
             this.fourlomza_checkBox.TabIndex = 10;
             this.fourlomza_checkBox.Text = "4lomza.pl";
             this.fourlomza_checkBox.UseVisualStyleBackColor = true;
@@ -241,14 +260,14 @@
             // time_label
             // 
             this.time_label.AutoSize = true;
-            this.time_label.Location = new System.Drawing.Point(312, 17);
+            this.time_label.Location = new System.Drawing.Point(312, 64);
             this.time_label.Name = "time_label";
             this.time_label.Size = new System.Drawing.Size(0, 13);
             this.time_label.TabIndex = 11;
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(552, 65);
+            this.webBrowser1.Location = new System.Drawing.Point(543, 65);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
@@ -258,9 +277,12 @@
             // kaliszak_checkBox
             // 
             this.kaliszak_checkBox.AutoSize = true;
+            this.kaliszak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kaliszak_checkBox.BackgroundImage")));
+            this.kaliszak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kaliszak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kaliszak_checkBox.Location = new System.Drawing.Point(38, 227);
             this.kaliszak_checkBox.Name = "kaliszak_checkBox";
-            this.kaliszak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.kaliszak_checkBox.Size = new System.Drawing.Size(93, 21);
             this.kaliszak_checkBox.TabIndex = 14;
             this.kaliszak_checkBox.Text = "kaliszak.pl";
             this.kaliszak_checkBox.UseVisualStyleBackColor = true;
@@ -268,16 +290,19 @@
             // krakusik_checkBox
             // 
             this.krakusik_checkBox.AutoSize = true;
+            this.krakusik_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("krakusik_checkBox.BackgroundImage")));
+            this.krakusik_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.krakusik_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.krakusik_checkBox.Location = new System.Drawing.Point(38, 250);
             this.krakusik_checkBox.Name = "krakusik_checkBox";
-            this.krakusik_checkBox.Size = new System.Drawing.Size(77, 17);
+            this.krakusik_checkBox.Size = new System.Drawing.Size(97, 21);
             this.krakusik_checkBox.TabIndex = 15;
             this.krakusik_checkBox.Text = "krakusik.pl";
             this.krakusik_checkBox.UseVisualStyleBackColor = true;
             // 
             // city_textbox
             // 
-            this.city_textbox.Location = new System.Drawing.Point(179, 499);
+            this.city_textbox.Location = new System.Drawing.Point(179, 546);
             this.city_textbox.Name = "city_textbox";
             this.city_textbox.Size = new System.Drawing.Size(358, 20);
             this.city_textbox.TabIndex = 16;
@@ -285,7 +310,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(179, 483);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(179, 530);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 17;
@@ -294,9 +320,12 @@
             // gdyniak_checkBox
             // 
             this.gdyniak_checkBox.AutoSize = true;
+            this.gdyniak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gdyniak_checkBox.BackgroundImage")));
+            this.gdyniak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gdyniak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gdyniak_checkBox.Location = new System.Drawing.Point(38, 273);
             this.gdyniak_checkBox.Name = "gdyniak_checkBox";
-            this.gdyniak_checkBox.Size = new System.Drawing.Size(74, 17);
+            this.gdyniak_checkBox.Size = new System.Drawing.Size(91, 21);
             this.gdyniak_checkBox.TabIndex = 18;
             this.gdyniak_checkBox.Text = "gdyniak.pl";
             this.gdyniak_checkBox.UseVisualStyleBackColor = true;
@@ -304,16 +333,19 @@
             // bazaro_checkBox
             // 
             this.bazaro_checkBox.AutoSize = true;
+            this.bazaro_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bazaro_checkBox.BackgroundImage")));
+            this.bazaro_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bazaro_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bazaro_checkBox.Location = new System.Drawing.Point(38, 296);
             this.bazaro_checkBox.Name = "bazaro_checkBox";
-            this.bazaro_checkBox.Size = new System.Drawing.Size(92, 17);
+            this.bazaro_checkBox.Size = new System.Drawing.Size(109, 21);
             this.bazaro_checkBox.TabIndex = 19;
             this.bazaro_checkBox.Text = "bazaro.com.pl";
             this.bazaro_checkBox.UseVisualStyleBackColor = true;
             // 
             // workstation_textBox
             // 
-            this.workstation_textBox.Location = new System.Drawing.Point(179, 460);
+            this.workstation_textBox.Location = new System.Drawing.Point(179, 507);
             this.workstation_textBox.Name = "workstation_textBox";
             this.workstation_textBox.Size = new System.Drawing.Size(358, 20);
             this.workstation_textBox.TabIndex = 20;
@@ -321,7 +353,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(176, 444);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(176, 491);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 21;
@@ -330,26 +363,25 @@
             // najpewniej_checkBox
             // 
             this.najpewniej_checkBox.AutoSize = true;
+            this.najpewniej_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("najpewniej_checkBox.BackgroundImage")));
+            this.najpewniej_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.najpewniej_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.najpewniej_checkBox.Location = new System.Drawing.Point(38, 319);
             this.najpewniej_checkBox.Name = "najpewniej_checkBox";
-            this.najpewniej_checkBox.Size = new System.Drawing.Size(87, 17);
+            this.najpewniej_checkBox.Size = new System.Drawing.Size(109, 21);
             this.najpewniej_checkBox.TabIndex = 22;
             this.najpewniej_checkBox.Text = "najpewniej.pl";
             this.najpewniej_checkBox.UseVisualStyleBackColor = true;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(28, 118);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(109, 23);
-            this.progressBar1.TabIndex = 23;
-            // 
             // poznaniak_checkBox
             // 
             this.poznaniak_checkBox.AutoSize = true;
+            this.poznaniak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("poznaniak_checkBox.BackgroundImage")));
+            this.poznaniak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.poznaniak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.poznaniak_checkBox.Location = new System.Drawing.Point(38, 343);
             this.poznaniak_checkBox.Name = "poznaniak_checkBox";
-            this.poznaniak_checkBox.Size = new System.Drawing.Size(86, 17);
+            this.poznaniak_checkBox.Size = new System.Drawing.Size(105, 21);
             this.poznaniak_checkBox.TabIndex = 25;
             this.poznaniak_checkBox.Text = "poznaniak.pl";
             this.poznaniak_checkBox.UseVisualStyleBackColor = true;
@@ -357,9 +389,12 @@
             // wroclawiak_checkBox
             // 
             this.wroclawiak_checkBox.AutoSize = true;
+            this.wroclawiak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("wroclawiak_checkBox.BackgroundImage")));
+            this.wroclawiak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.wroclawiak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wroclawiak_checkBox.Location = new System.Drawing.Point(38, 367);
             this.wroclawiak_checkBox.Name = "wroclawiak_checkBox";
-            this.wroclawiak_checkBox.Size = new System.Drawing.Size(90, 17);
+            this.wroclawiak_checkBox.Size = new System.Drawing.Size(113, 21);
             this.wroclawiak_checkBox.TabIndex = 26;
             this.wroclawiak_checkBox.Text = "wroclawiak.pl";
             this.wroclawiak_checkBox.UseVisualStyleBackColor = true;
@@ -367,9 +402,12 @@
             // katowiczak_checkBox
             // 
             this.katowiczak_checkBox.AutoSize = true;
+            this.katowiczak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("katowiczak_checkBox.BackgroundImage")));
+            this.katowiczak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.katowiczak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.katowiczak_checkBox.Location = new System.Drawing.Point(38, 391);
             this.katowiczak_checkBox.Name = "katowiczak_checkBox";
-            this.katowiczak_checkBox.Size = new System.Drawing.Size(91, 17);
+            this.katowiczak_checkBox.Size = new System.Drawing.Size(111, 21);
             this.katowiczak_checkBox.TabIndex = 27;
             this.katowiczak_checkBox.Text = "katowiczak.pl";
             this.katowiczak_checkBox.UseVisualStyleBackColor = true;
@@ -377,9 +415,12 @@
             // bydgoszczak_checkBox
             // 
             this.bydgoszczak_checkBox.AutoSize = true;
+            this.bydgoszczak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bydgoszczak_checkBox.BackgroundImage")));
+            this.bydgoszczak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bydgoszczak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bydgoszczak_checkBox.Location = new System.Drawing.Point(38, 415);
             this.bydgoszczak_checkBox.Name = "bydgoszczak_checkBox";
-            this.bydgoszczak_checkBox.Size = new System.Drawing.Size(99, 17);
+            this.bydgoszczak_checkBox.Size = new System.Drawing.Size(115, 21);
             this.bydgoszczak_checkBox.TabIndex = 28;
             this.bydgoszczak_checkBox.Text = "bydgoszczak.pl";
             this.bydgoszczak_checkBox.UseVisualStyleBackColor = true;
@@ -387,9 +428,12 @@
             // szczeciniak_checkBox
             // 
             this.szczeciniak_checkBox.AutoSize = true;
+            this.szczeciniak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("szczeciniak_checkBox.BackgroundImage")));
+            this.szczeciniak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.szczeciniak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.szczeciniak_checkBox.Location = new System.Drawing.Point(38, 439);
             this.szczeciniak_checkBox.Name = "szczeciniak_checkBox";
-            this.szczeciniak_checkBox.Size = new System.Drawing.Size(92, 17);
+            this.szczeciniak_checkBox.Size = new System.Drawing.Size(110, 21);
             this.szczeciniak_checkBox.TabIndex = 29;
             this.szczeciniak_checkBox.Text = "szczeciniak.pl";
             this.szczeciniak_checkBox.UseVisualStyleBackColor = true;
@@ -397,9 +441,12 @@
             // gdaniak_checkBox
             // 
             this.gdaniak_checkBox.AutoSize = true;
+            this.gdaniak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gdaniak_checkBox.BackgroundImage")));
+            this.gdaniak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gdaniak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gdaniak_checkBox.Location = new System.Drawing.Point(38, 463);
             this.gdaniak_checkBox.Name = "gdaniak_checkBox";
-            this.gdaniak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.gdaniak_checkBox.Size = new System.Drawing.Size(91, 21);
             this.gdaniak_checkBox.TabIndex = 30;
             this.gdaniak_checkBox.Text = "gdaniak.pl";
             this.gdaniak_checkBox.UseVisualStyleBackColor = true;
@@ -407,9 +454,12 @@
             // opolak_checkBox
             // 
             this.opolak_checkBox.AutoSize = true;
+            this.opolak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("opolak_checkBox.BackgroundImage")));
+            this.opolak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.opolak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.opolak_checkBox.Location = new System.Drawing.Point(38, 487);
             this.opolak_checkBox.Name = "opolak_checkBox";
-            this.opolak_checkBox.Size = new System.Drawing.Size(69, 17);
+            this.opolak_checkBox.Size = new System.Drawing.Size(83, 21);
             this.opolak_checkBox.TabIndex = 31;
             this.opolak_checkBox.Text = "opolak.pl";
             this.opolak_checkBox.UseVisualStyleBackColor = true;
@@ -417,9 +467,12 @@
             // toruniak_checkBox
             // 
             this.toruniak_checkBox.AutoSize = true;
+            this.toruniak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toruniak_checkBox.BackgroundImage")));
+            this.toruniak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toruniak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toruniak_checkBox.Location = new System.Drawing.Point(38, 511);
             this.toruniak_checkBox.Name = "toruniak_checkBox";
-            this.toruniak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.toruniak_checkBox.Size = new System.Drawing.Size(96, 21);
             this.toruniak_checkBox.TabIndex = 32;
             this.toruniak_checkBox.Text = "toruniak.pl";
             this.toruniak_checkBox.UseVisualStyleBackColor = true;
@@ -427,9 +480,12 @@
             // oswiecimiak_checkBox
             // 
             this.oswiecimiak_checkBox.AutoSize = true;
+            this.oswiecimiak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("oswiecimiak_checkBox.BackgroundImage")));
+            this.oswiecimiak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.oswiecimiak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oswiecimiak_checkBox.Location = new System.Drawing.Point(38, 535);
             this.oswiecimiak_checkBox.Name = "oswiecimiak_checkBox";
-            this.oswiecimiak_checkBox.Size = new System.Drawing.Size(94, 17);
+            this.oswiecimiak_checkBox.Size = new System.Drawing.Size(117, 21);
             this.oswiecimiak_checkBox.TabIndex = 33;
             this.oswiecimiak_checkBox.Text = "oswiecimiak.pl";
             this.oswiecimiak_checkBox.UseVisualStyleBackColor = true;
@@ -437,21 +493,29 @@
             // lubliniak_checkBox
             // 
             this.lubliniak_checkBox.AutoSize = true;
+            this.lubliniak_checkBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lubliniak_checkBox.BackgroundImage")));
+            this.lubliniak_checkBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lubliniak_checkBox.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lubliniak_checkBox.Location = new System.Drawing.Point(37, 558);
             this.lubliniak_checkBox.Name = "lubliniak_checkBox";
-            this.lubliniak_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.lubliniak_checkBox.Size = new System.Drawing.Size(100, 21);
             this.lubliniak_checkBox.TabIndex = 34;
             this.lubliniak_checkBox.Text = "lubliniak.pl";
             this.lubliniak_checkBox.UseVisualStyleBackColor = true;
             // 
             // zaznaczWszystkie
             // 
-            this.zaznaczWszystkie.Location = new System.Drawing.Point(0, 148);
+            this.zaznaczWszystkie.BackColor = System.Drawing.Color.Transparent;
+            this.zaznaczWszystkie.BackgroundImage = global::botstrony.Properties.Resources.Graybtn;
+            this.zaznaczWszystkie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.zaznaczWszystkie.FlatAppearance.BorderSize = 0;
+            this.zaznaczWszystkie.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zaznaczWszystkie.Location = new System.Drawing.Point(0, 138);
             this.zaznaczWszystkie.Name = "zaznaczWszystkie";
-            this.zaznaczWszystkie.Size = new System.Drawing.Size(173, 23);
+            this.zaznaczWszystkie.Size = new System.Drawing.Size(173, 37);
             this.zaznaczWszystkie.TabIndex = 35;
             this.zaznaczWszystkie.Text = "Zaznacz wszystkie";
-            this.zaznaczWszystkie.UseVisualStyleBackColor = true;
+            this.zaznaczWszystkie.UseVisualStyleBackColor = false;
             this.zaznaczWszystkie.Click += new System.EventHandler(this.zaznaczWszystkie_Click);
             // 
             // imageList1
@@ -868,13 +932,22 @@
             this.pictureBox35.TabStop = false;
             this.pictureBox35.Visible = false;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(179, 572);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(358, 23);
+            this.progressBar1.TabIndex = 71;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::botstrony.Properties.Resources.szaryBot;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -9);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::botstrony.Properties.Resources.eastserviceorgpng;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(404, 284);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 612);
-            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.Size = new System.Drawing.Size(121, 65);
+            this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
             // 
             // Form1
@@ -882,7 +955,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::botstrony.Properties.Resources.czerwonyBot;
-            this.ClientSize = new System.Drawing.Size(1137, 603);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1132, 603);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox35);
             this.Controls.Add(this.pictureBox34);
             this.Controls.Add(this.pictureBox33);
@@ -928,7 +1004,6 @@
             this.Controls.Add(this.katowiczak_checkBox);
             this.Controls.Add(this.wroclawiak_checkBox);
             this.Controls.Add(this.poznaniak_checkBox);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.najpewniej_checkBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.workstation_textBox);
@@ -951,7 +1026,8 @@
             this.Controls.Add(this.upload_button);
             this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.tresc_textbox);
-            this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1020,7 +1096,6 @@
         private System.Windows.Forms.TextBox workstation_textBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox najpewniej_checkBox;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
         private System.Windows.Forms.CheckBox poznaniak_checkBox;
         private System.Windows.Forms.CheckBox wroclawiak_checkBox;
@@ -1068,6 +1143,7 @@
         private System.Windows.Forms.PictureBox pictureBox33;
         private System.Windows.Forms.PictureBox pictureBox34;
         private System.Windows.Forms.PictureBox pictureBox35;
+        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
