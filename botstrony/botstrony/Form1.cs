@@ -17,12 +17,11 @@ namespace botstrony
     {
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-          //  webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
-            
-       // Od pictureBox2 do pictureBox18 - zielone 
+            //  webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
+            // Od pictureBox2 do pictureBox18 - zielone 
             //Od 19 do 35 czerwone 
-          //  pictureBox23.Visible = true;     
+            //  pictureBox23.Visible = true;     
+
         }
 
         public Form1()
@@ -31,16 +30,16 @@ namespace botstrony
             timer1.Interval = 100;
             timer1.Start();
             tresc_textbox.MaxLength = 10000;
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                PictureBox[] boxes = { pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30, pictureBox31, pictureBox32, pictureBox33, pictureBox34, pictureBox35 };
+                PictureBox[] boxes = { pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30, pictureBox31, pictureBox32, pictureBox33};
 
-                for (int i = 0; i > boxes.Length;i++)
+                for (int i = 0; i < boxes.Length; i++)
                 {
                     boxes[i].Visible = false;
                 }
@@ -60,99 +59,92 @@ namespace botstrony
                 }
 
 
-            if (CheckForInternetConnection() == true && CheckForText() == 0 && CheckBox() == true)
-            {
+                if (CheckForInternetConnection() == true && CheckForText() == 0 && CheckBox() == true)
+                {
                     if (mylomza_checkBox.Checked)
                     {
                         mylomza();
                     }
+
                     if (fourlomza_checkBox.Checked)
                     {
                         if (tresc_textbox.TextLength > 160)
                         {
                             MessageBox.Show("Ogłoszenie powyżej 160 znaków nie zostanie dodane na stronę: 4lomza.pl", "Ogłoszenie za długie");
+                            pictureBox20.Visible = true;
                         }
                         else
                         {
                             fourlomza();
+
                         }
                     }
                     if (kaliszak_checkBox.Checked)
                     {
                         kaliszak();
                     }
-                    if (krakusik_checkBox.Checked)
+                    if(krakusik_checkBox.Checked)
                     {
                         krakusik();
                     }
-                    if (gdyniak_checkBox.Checked)
+                     if (gdyniak_checkBox.Checked)
                     {
                         gdyniak();
                     }
-                    if (bazaro_checkBox.Checked)
-                    {
-                      //  bazaro();
-                    }
-                    if (najpewniej_checkBox.Checked)
+                     if (najpewniej_checkBox.Checked)
                     {
                         najpewniej();
                     }
-                    if (poznaniak_checkBox.Checked)
+                     if (poznaniak_checkBox.Checked)
                     {
                         poznaniak();
                     }
-                    if (wroclawiak_checkBox.Checked)
+                     if (wroclawiak_checkBox.Checked)
                     {
                         wroclawiak();
                     }
-                    if (katowiczak_checkBox.Checked)
+                     if (katowiczak_checkBox.Checked)
                     {
                         katowiczak();
                     }
-                    if (bydgoszczak_checkBox.Checked)
+                     if (bydgoszczak_checkBox.Checked)
                     {
                         bydgoszczak();
                     }
-                    if (szczeciniak_checkBox.Checked)
+                     if (szczeciniak_checkBox.Checked)
                     {
                         szczeciniak();
                     }
-                    if (gdaniak_checkBox.Checked)
+                     if (gdaniak_checkBox.Checked)
                     {
                         gdaniak();
                     }
-                    if (opolak_checkBox.Checked)
+                     if (opolak_checkBox.Checked)
                     {
                         opolak();
                     }
-                    if (toruniak_checkBox.Checked)
+                     if (toruniak_checkBox.Checked)
                     {
                         toruniak();
                     }
-                    if (oswiecimiak_checkBox.Checked)
-                    {
-                        oswiecimiak();
-                    }
-                    if (lubliniak_checkBox.Checked)
-                    {
-                        lubliniak();
-                    }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nieznany bład, skontaktuj się z Bartek&Karol Company ;)", "Fatality Error");
+                MessageBox.Show("Nieznany bład, skontaktuj się z Bartek&Karol Company ;)", "Fatality Error "+ ex);
             }
 
         }
 
-        private async void mylomza()
+        private void mylomza()
         {
             try
             {
                 webBrowser1.Navigate("http://www.mylomza.pl/ogloszenia/dodaj2.html");
-
-                await PageLoad(5);
+                while(webBrowser1.ReadyState != WebBrowserReadyState.Complete)
+                {
+                    Application.DoEvents();
+                }
 
                 webBrowser1.Document.GetElementById("contact").SetAttribute("value", phone_textbox.Text);
                 webBrowser1.Document.GetElementById("cat_id").SetAttribute("value", "6");
@@ -166,7 +158,7 @@ namespace botstrony
                     }
                 }
 
-              HtmlElementCollection wcisk = this.webBrowser1.Document.GetElementsByTagName("button");
+                HtmlElementCollection wcisk = this.webBrowser1.Document.GetElementsByTagName("button");
                 foreach (HtmlElement el in wcisk)
                 {
                     if (el.GetAttribute("type").Equals("button"))
@@ -174,32 +166,33 @@ namespace botstrony
                         el.InvokeMember("click");
                     }
                 }
+                waitTillLoad();
 
-                await PageLoad(5);
-                //sprawdzenie czy dodalo ogloszenie
-                 if (webBrowser1.Url.ToString() == "http://www.mylomza.pl/ogloszenia/show/0_.html")
-                 {
+
                     pictureBox2.Visible = true;
-                 }
-                 else
-                 {
-                    pictureBox19.Visible = true;
-                 }
-                 
+
+                
+                webBrowser1.Stop();
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do myLomza.pl nie powiodło się.", "Niepowodzenie");
+
+                pictureBox19.Visible = true;
             }
         }
 
-        private async void fourlomza()
+        private void fourlomza()
         {
             try
             {
                 webBrowser1.Navigate("https://www.4lomza.pl/ogl2.php?mod=new");
+                while (webBrowser1.ReadyState != WebBrowserReadyState.Complete)
+                {
+                    Application.DoEvents();
+                }
 
-                await PageLoad(5);
 
                 webBrowser1.Document.GetElementById("form_email").InnerText = email_textbox.Text;
                 webBrowser1.Document.GetElementById("form_nazwa").InnerText = name_textbox.Text;
@@ -207,113 +200,41 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("form_kat").SetAttribute("value", "4");
                 webBrowser1.Document.GetElementById("form_tresc").InnerText = tresc_textbox.Text;
 
-             
-                                HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                                foreach (HtmlElement el in elc)
-                                {
-                                    if (el.GetAttribute("type").Equals("submit"))
-                                    {
-                                        el.InvokeMember("click");
-                                    }
-                                }
-                 
-                await PageLoad(5);
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "https://www.4lomza.pl/ogl2.php?mod=new")
-                 {
+
+                HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
+                while (webBrowser1.ReadyState != WebBrowserReadyState.Complete)
+                {
+                    Application.DoEvents();
+                }
+
                     pictureBox3.Visible = true;
-                 }
-                 else
-                 {
-                    pictureBox20.Visible = true;
-                 }
-                 
+
+
+               
+                webBrowser1.Stop();
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do 4lomza.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox20.Visible = true;
             }
         }
 
-        private async void bazaro()
-        {
-            try
-            {
-                webBrowser1.Navigate("https://bazaro.com.pl/?view=post&catid=5&subcatid=49");
-
-                await PageLoad(5);
-
-                HtmlElementCollection ele = webBrowser1.Document.GetElementsByTagName("select");
-                foreach (HtmlElement el in ele)
-                {
-                   
-                  
-                   // Thread.Sleep(500);
-
-                    if (el.GetAttribute("name").Equals("district"))
-                    {
-                        el.InvokeMember("onclick");
-                        Thread.Sleep(500);
-                        if ((el.GetAttribute("value").Equals("15")))
-                        {
-                            el.InvokeMember("onclick");
-                        }
-                     }
-                        Thread.Sleep(500);
-                        el.InvokeMember("onclick");
-                    }
-                
-
-
-                webBrowser1.Document.GetElementById("email").SetAttribute("value", email_textbox.Text);
-                webBrowser1.Document.GetElementById("adtitle").SetAttribute("value", name_textbox.Text);
-                webBrowser1.Document.GetElementById("addesc").SetAttribute("value", tresc_textbox.Text);
-                webBrowser1.Document.GetElementById("price").SetAttribute("value", "123");
-                webBrowser1.Document.GetElementById("x[1]").SetAttribute("value", phone_textbox.Text);
-
-                HtmlElementCollection elem = webBrowser1.Document.GetElementsByTagName("input");
-                foreach (HtmlElement eles in elem)
-                {
-                    if (eles.GetAttribute("name").Equals("agree"))
-                    {
-                        eles.InvokeMember("click");
-                    }
-                }
-
-                              HtmlElementCollection element = webBrowser1.Document.GetElementsByTagName("button");
-                               foreach (HtmlElement elems in element)
-                               {
-                                   if (elems.GetAttribute("class").Equals("btn btn-default btn-sm"))
-                                   {
-                                       elems.InvokeMember("click");
-                                   }
-                               }
-                               await PageLoad(5);
-
-                               //sprawdzenie czy dodalo ogloszenie
-                                if (webBrowser1.Url.ToString() == "https://bazaro.com.pl/index.php?view=post&subcatid=49&posted=1")
-                                {
-                                   pictureBox7.Visible = true;
-                                }
-                                else
-                                {
-                                   pictureBox24.Visible = true;
-                                }
-                                
-            }
-            catch
-            {
-                MessageBox.Show("Dodawanie do bazarek.pl nie powiodło się.", "Niepowodzenie");
-            }
-        }
-
-        private async void kaliszak()
+        private void kaliszak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.kaliszak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -325,7 +246,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -337,39 +258,31 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                  foreach (HtmlElement el in elc)
-                  {
-                      if (el.GetAttribute("type").Equals("submit"))
-                      {
-                          el.InvokeMember("click");
-                      }
-                  }
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
 
-                await PageLoad(5);
-                  //sprawdzenie czy dodalo ogloszenie
-                                  if (webBrowser1.Url.ToString() == "http://www.kaliszak.pl/dodaj-ogloszenie/koniec")
-                                  {
-                                     pictureBox5.Visible = true;
-                                  }
-                                  else
-                                  {
-                                     pictureBox22.Visible = true;
-                                  }
-                   
+                    pictureBox4.Visible = true;
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do kaliszak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox21.Visible = true;
             }
         }
 
-        private async void krakusik()
+        private void krakusik()
         {
             try
             {
                 webBrowser1.Navigate("http://www.krakusik.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -381,7 +294,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -389,40 +302,35 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
-                         HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                            foreach (HtmlElement el in elc)
-                            {
-                                if (el.GetAttribute("type").Equals("submit"))
-                                {
-                                    el.InvokeMember("click");
-                                }
-                            }
-                await PageLoad(5);
+                HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
 
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.krakusik.pl/dodaj-ogloszenie/koniec")
-                 {
-                    pictureBox6.Visible = true;
-                 }
-                 else
-                 {
-                    pictureBox23.Visible = true;
-                 }
+                    pictureBox5.Visible = true;
+
+                    
+                
 
             }
             catch
             {
                 MessageBox.Show("Dodawanie do krakusik.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox22.Visible = true;
             }
         }
 
-        private async void gdyniak()
+        private void gdyniak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.gdyniak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -434,7 +342,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -446,39 +354,31 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                             foreach (HtmlElement el in elc)
-                             {
-                                 if (el.GetAttribute("type").Equals("submit"))
-                                 {
-                                     el.InvokeMember("click");
-                                 }
-                             }
-                 
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
 
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.gdyniak.pl/dodaj-ogloszenie/koniec")
-                 {
-                    pictureBox7.Visible = true;
-                 }
-                 else
-                 {
-                    pictureBox24.Visible = true;
-                 }
-                 
+
+                    pictureBox6.Visible = true;
             }
             catch
             {
                 MessageBox.Show("Dodawanie do gdyniak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox23.Visible = true;
             }
         }
 
-        private async void najpewniej()
+        private void najpewniej()
         {
             try
             {
                 webBrowser1.Navigate("http://www.najpewniej.pl/dodaj.php?kat=764");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection el = webBrowser1.Document.GetElementsByTagName("input");
                 foreach (HtmlElement ele in el)
@@ -530,30 +430,25 @@ namespace botstrony
                         elmon.InvokeMember("click");
                     }
                 }
-                await PageLoad(5);
-                //sprawdzenie czy dodalo ogloszenie
-                 if (webBrowser1.Url.ToString() == "http://www.najpewniej.pl/dodaj.php")
-                 {
-                    pictureBox8.Visible = true;
-                 }
-                 else
-                 {
-                    pictureBox25.Visible = true;
-                 }
-                 
+                pictureBox8.Visible = true;
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do najpewniej.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox25.Visible = true;
             }
         }
-        private async void poznaniak()
+        private void poznaniak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.poznaniak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                while (webBrowser1.ReadyState != WebBrowserReadyState.Complete)
+                {
+                    Application.DoEvents();
+                }
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -565,7 +460,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -574,39 +469,37 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                 foreach (HtmlElement el in elc)
-                 {
-                     if (el.GetAttribute("type").Equals("submit"))
-                     {
-                         el.InvokeMember("click");
-                     }
-                 }
-                await PageLoad(5);
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
 
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.poznaniak.pl/dodaj-ogloszenie/koniec")
-                {
-                   pictureBox9.Visible = true;
-                }
-                else
-                {
-                   pictureBox26.Visible = true;
-                }
+                pictureBox9.Visible = true;
+
+                   // pictureBox26.Visible = true;
                 
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do poznaniak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox26.Visible = true;
             }
         }
 
-        private async void wroclawiak()
+        private void wroclawiak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.wroclawiak.pl/dodaj-ogloszenie/formularz");
-
-                await PageLoad(5);
+                while (webBrowser1.ReadyState != WebBrowserReadyState.Complete)
+                {
+                    Application.DoEvents();
+                }
+                
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -618,7 +511,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -627,39 +520,32 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                      foreach (HtmlElement el in elc)
-                      {
-                          if (el.GetAttribute("type").Equals("submit"))
-                          {
-                              el.InvokeMember("click");
-                          }
-                      }
-                await PageLoad(5);
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
+                    pictureBox10.Visible = true;
 
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.wroclawiak.pl/dodaj-ogloszenie/koniec")
-                 {
-                     pictureBox10.Visible = true;
-                  }
-                  else
-                  {
-                     pictureBox27.Visible = true;
-                 }
-                 
+                webBrowser1.Stop();
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do wroclawiak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox27.Visible = true;
             }
         }
 
-        private async void katowiczak()
+        private void katowiczak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.katowiczak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -671,7 +557,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -680,39 +566,36 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                    foreach (HtmlElement el in elc)
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
                     {
-                        if (el.GetAttribute("type").Equals("submit"))
-                        {
-                            el.InvokeMember("click");
-                        }
+                        el.InvokeMember("click");
                     }
+                }
 
-                await PageLoad(5);
-                //sprawdzenie czy dodalo ogloszenie
-               if (webBrowser1.Url.ToString() == "http://www.katowiczak.pl/dodaj-ogloszenie/koniec")
-               {
-               pictureBox11.Visible = true;
-              }
-              else
-              {
-                 pictureBox28.Visible = true;
-               }
-               
+                    pictureBox11.Visible = true;
+
+
+
+
+                webBrowser1.Stop();
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do katowiczak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox28.Visible = true;
             }
         }
 
-        private async void bydgoszczak()
+        private void bydgoszczak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.bydgoszczak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -724,7 +607,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -733,39 +616,35 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                     foreach (HtmlElement el in elc)
-                     {
-                         if (el.GetAttribute("type").Equals("submit"))
-                         {
-                             el.InvokeMember("click");
-                         }
-                     }
-                await PageLoad(5);
-
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.bydgoszczak.pl/dodaj-ogloszenie/formularz")
+                foreach (HtmlElement el in elc)
                 {
-                    pictureBox12.Visible = true;
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
                 }
-                else
-                {
-                    pictureBox29.Visible = true;
-                 }
-                 
+
+                    pictureBox12.Visible = true;
+
+
+               
+                webBrowser1.Stop();
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do bydgoszczak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox29.Visible = true;
             }
         }
 
-        private async void szczeciniak()
+        private void szczeciniak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.szczeciniak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -777,7 +656,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -786,38 +665,31 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                          foreach (HtmlElement el in elc)
-                          {
-                              if (el.GetAttribute("type").Equals("submit"))
-                              {
-                                  el.InvokeMember("click");
-                              }
-                          }
-                await PageLoad(5);
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
 
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.szczeciniak.pl/dodaj-ogloszenie/formularz")
-                 {
                     pictureBox13.Visible = true;
-                 }
-                 else
-                 {
-                    pictureBox30.Visible = true;
-                 }
-                 
+
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do szczeciniak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox30.Visible = true;
             }
         }
-        private async void gdaniak()
+        private void gdaniak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.gdanszczak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -828,7 +700,7 @@ namespace botstrony
                     }
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -837,38 +709,30 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                       foreach (HtmlElement el in elc)
-                       {
-                           if (el.GetAttribute("type").Equals("submit"))
-                           {
-                               el.InvokeMember("click");
-                           }
-                       }
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
 
-                await PageLoad(5);
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.gdanszczak.pl/dodaj-ogloszenie/koniec")
-                 {
                     pictureBox14.Visible = true;
-                 }
-                 else
-                 {
-                    pictureBox31.Visible = true;
-                 }
-                 
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do gdaniak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox31.Visible = true;
             }
         }
-        private async void opolak()
+        private void opolak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.opolak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
@@ -880,7 +744,7 @@ namespace botstrony
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -892,52 +756,45 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                  foreach (HtmlElement el in elc)
-                  {
-                      if (el.GetAttribute("type").Equals("submit"))
-                      {
-                          el.InvokeMember("click");
-                      }
-                  }
+                foreach (HtmlElement el in elc)
+                {
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
+                    pictureBox15.Visible = true;
 
-                await PageLoad(5);
 
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.opolak.pl/dodaj-ogloszenie/koniec")
-                 {
-                  pictureBox15.Visible = true;
-               }
-               else
-               {
-                  pictureBox32.Visible = true;
-                 }
-                 
+                
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do opolak.pl nie powiodło się.", "Niepowodzenie");
+                            pictureBox32.Visible = true;
             }
         }
 
-        private async void toruniak()
+        private void toruniak()
         {
             try
             {
                 webBrowser1.Navigate("http://www.toruniak.pl/dodaj-ogloszenie/formularz");
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 HtmlElementCollection ele = webBrowser1.Document.All;
                 foreach (HtmlElement el in ele)
                 {
-                    if (el.InnerText == "Dam pracę")
+                    if (el.InnerText == "Oferty pracy")
                     {
                         el.InvokeMember("onClick");
                     }
 
                 }
 
-                await PageLoad(5);
+                waitTillLoad();
 
                 webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
                 webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
@@ -949,142 +806,24 @@ namespace botstrony
                 webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
 
                 HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                    foreach (HtmlElement el in elc)
-                    {
-                        if (el.GetAttribute("type").Equals("submit"))
-                        {
-                            el.InvokeMember("click");
-                        }
-                    }
-                await PageLoad(5);
-
-                //sprawdzenie czy dodalo ogloszenie
-                if (webBrowser1.Url.ToString() == "http://www.toruniak.pl/dodaj-ogloszenie/koniec")
-                 {
-                    pictureBox16.Visible = true;
-                }
-                 else
+                foreach (HtmlElement el in elc)
                 {
-                    pictureBox33.Visible = true;
-                 }
-                
+                    if (el.GetAttribute("type").Equals("submit"))
+                    {
+                        el.InvokeMember("click");
+                    }
+                }
+
+                    pictureBox16.Visible = true;
+
+
+               
+
             }
             catch
             {
                 MessageBox.Show("Dodawanie do toruniak.pl nie powiodło się.", "Niepowodzenie");
-            }
-        }
-
-        private async void oswiecimiak()
-        {
-            try
-            {
-                webBrowser1.Navigate("http://www.oswiecimiak.pl/dodaj-ogloszenie/formularz");
-
-                await PageLoad(5);
-
-                HtmlElementCollection ele = webBrowser1.Document.All;
-                foreach (HtmlElement el in ele)
-                {
-                    if (el.InnerText == "Dam pracę")
-                    {
-                        el.InvokeMember("onClick");
-                    }
-
-                }
-
-                await PageLoad(5);
-
-                webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", city_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
-                webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
-                //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
-
-                /*           HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                         foreach (HtmlElement el in elc)
-                         {
-                             if (el.GetAttribute("type").Equals("submit"))
-                             {
-                                 el.InvokeMember("click");
-                             }
-                         }
-                 */
-
-                //sprawdzenie czy dodalo ogloszenie
-                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                 {
-                       pictureBox17.Visible = true;
-                   }
-                    else
-                   {
-                       pictureBox34.Visible = true;
-                 }
-                 */
-            }
-            catch
-            {
-                MessageBox.Show("Dodawanie do oswiecimiak.pl nie powiodło się.", "Niepowodzenie");
-            }
-        }
-
-
-        private async void lubliniak()
-        {
-            try
-            {
-                webBrowser1.Navigate("http://www.lubliniak.pl/dodaj-ogloszenie/formularz");
-
-                await PageLoad(5);
-
-                HtmlElementCollection ele = webBrowser1.Document.All;
-                foreach (HtmlElement el in ele)
-                {
-                    if (el.InnerText == "Dam pracę")
-                    {
-                        el.InvokeMember("onClick");
-                    }
-
-                }
-
-                await PageLoad(5);
-
-                webBrowser1.Document.GetElementById("announcement_title").SetAttribute("value", name_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_description").SetAttribute("value", tresc_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_phone_number").SetAttribute("value", phone_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_email").SetAttribute("value", email_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_place").SetAttribute("value", city_textbox.Text);
-                webBrowser1.Document.GetElementById("announcement_attribute_109_Praca-za-granica").InvokeMember("click");
-                webBrowser1.Document.GetElementById("announcement_rules_accept").InvokeMember("click");
-                //webBrowser1.Document.GetElementById("announcement_marketing_consent").InvokeMember("click");
-
-                /*      HtmlElementCollection elc = this.webBrowser1.Document.GetElementsByTagName("input");
-                    foreach (HtmlElement el in elc)
-                    {
-                        if (el.GetAttribute("type").Equals("submit"))
-                        {
-                            el.InvokeMember("click");
-                        }
-                    }
-                 */
-
-                //sprawdzenie czy dodalo ogloszenie
-                /* if (webBrowser1.Url.ToString() == "tutaj link odpowiedni")
-                 {
-                    pictureBox18.Visible = true;
-                }
-                 else
-                {
-                    pictureBox35.Visible = true;
-                 }
-                 */
-            }
-            catch
-            {
-                MessageBox.Show("Dodawanie do lubliniak.pl nie powiodło się.", "Niepowodzenie");
+                pictureBox33.Visible = true;
             }
         }
 
@@ -1123,7 +862,7 @@ namespace botstrony
             }
         }
 
-        private int CheckForText(int count = 0) 
+        private int CheckForText(int count = 0)
         {
             foreach (Control c in this.Controls)
             {
@@ -1144,25 +883,6 @@ namespace botstrony
             }
 
             return count;
-        }
-
-        private async Task PageLoad(int TimeOut)
-        {
-            TaskCompletionSource<bool> PageLoaded = null;
-            PageLoaded = new TaskCompletionSource<bool>();
-            int TimeElapsed = 0;
-            webBrowser1.DocumentCompleted += (s, e) =>
-            {
-                if (webBrowser1.ReadyState != WebBrowserReadyState.Complete) return;
-                if (PageLoaded.Task.IsCompleted) return; PageLoaded.SetResult(true);
-            };
-            //
-            while (PageLoaded.Task.Status != TaskStatus.RanToCompletion)
-            {
-                await Task.Delay(10);//10 ms interval
-                TimeElapsed++;
-                if (TimeElapsed >= TimeOut * 100) PageLoaded.TrySetResult(true);
-            }
         }
 
         public bool CheckBox()
@@ -1211,12 +931,51 @@ namespace botstrony
         {
             if (fourlomza_checkBox.Checked)
             {
-                tresc_textbox.MaxLength = 160;
+                if (tresc_textbox.TextLength >= 161)
+                {
+                    MessageBox.Show("Na www.4lomza.pl maksymalnie 160 znaków !", "Błąd");
+                    pictureBox20.Visible = true;
+
+
+                }
+               
             }
-            else
-            {
-                tresc_textbox.MaxLength = 10000;
-            }
+          
+            
         }
+
+        private void waitTillLoad()
+        {
+            WebBrowserReadyState loadStatus = default(WebBrowserReadyState);
+            int waittime = 100000;
+            int counter = 0;
+            while (true)
+            {
+                loadStatus = webBrowser1.ReadyState;
+                Application.DoEvents();
+
+                if ((counter > waittime) || (loadStatus == WebBrowserReadyState.Uninitialized) || (loadStatus == WebBrowserReadyState.Loading) || (loadStatus == WebBrowserReadyState.Interactive))
+                {
+                    break; // TODO: might not be correct. Was : Exit While
+                }
+                counter += 1;
+            }
+            counter = 0;
+            while (true)
+            {
+                loadStatus = webBrowser1.ReadyState;
+                Application.DoEvents();
+
+                if (loadStatus == WebBrowserReadyState.Complete)
+                {
+                    break; // TODO: might not be correct. Was : Exit While
+                }
+
+                counter += 1;
+            }
+            //Stworzone przez Bartek&Karol
+            //Kontakt: bartal0meoo@gmail.com
+        }
+
     }
 }
